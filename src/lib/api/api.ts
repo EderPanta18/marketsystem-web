@@ -1,7 +1,9 @@
-// lib/api/api.ts
-
-import { AxiosRequestConfig, AxiosResponse } from "axios";
-import { API_ENDPOINTS } from "@/core/api";
+import { AxiosRequestConfig } from "axios";
+import {
+  API_ENDPOINTS,
+  type ApiResponse,
+  type PaginatedResponse,
+} from "@/core/api";
 import { httpClient } from "./api.client";
 import { handleApiError } from "./error-handler";
 
@@ -9,25 +11,51 @@ export class ApiService {
   // Acceso a los endpoints definidos en core
   static readonly endpoints = API_ENDPOINTS;
 
-  static async get<T = unknown>(
+  static async get<T = any>(
     url: string,
     config?: AxiosRequestConfig
-  ): Promise<T> {
+  ): Promise<ApiResponse<T>> {
     try {
-      const response = await httpClient.get<T, AxiosResponse<T>>(url, config);
+      const response = await httpClient.get<ApiResponse<T>>(url, config);
       return response.data;
     } catch (error) {
       throw handleApiError(error);
     }
   }
 
-  static async post<T = unknown, D = unknown>(
+  static async post<T = any, D = any>(
     url: string,
     data?: D,
     config?: AxiosRequestConfig
-  ): Promise<T> {
+  ): Promise<ApiResponse<T>> {
     try {
-      const response = await httpClient.post<T, AxiosResponse<T>, D>(
+      const response = await httpClient.post<ApiResponse<T>>(url, data, config);
+      return response.data;
+    } catch (error) {
+      throw handleApiError(error);
+    }
+  }
+
+  static async put<T = any, D = any>(
+    url: string,
+    data?: D,
+    config?: AxiosRequestConfig
+  ): Promise<ApiResponse<T>> {
+    try {
+      const response = await httpClient.put<ApiResponse<T>>(url, data, config);
+      return response.data;
+    } catch (error) {
+      throw handleApiError(error);
+    }
+  }
+
+  static async patch<T = any, D = any>(
+    url: string,
+    data?: D,
+    config?: AxiosRequestConfig
+  ): Promise<ApiResponse<T>> {
+    try {
+      const response = await httpClient.patch<ApiResponse<T>>(
         url,
         data,
         config
@@ -38,62 +66,37 @@ export class ApiService {
     }
   }
 
-  static async put<T = unknown, D = unknown>(
+  static async delete<T = any>(
     url: string,
-    data?: D,
     config?: AxiosRequestConfig
-  ): Promise<T> {
+  ): Promise<ApiResponse<T>> {
     try {
-      const response = await httpClient.put<T, AxiosResponse<T>, D>(
-        url,
-        data,
-        config
-      );
+      const response = await httpClient.delete<ApiResponse<T>>(url, config);
       return response.data;
     } catch (error) {
       throw handleApiError(error);
     }
   }
 
-  static async patch<T = unknown, D = unknown>(
+  static async getPaginated<T = any>(
     url: string,
-    data?: D,
     config?: AxiosRequestConfig
-  ): Promise<T> {
+  ): Promise<PaginatedResponse<T>> {
     try {
-      const response = await httpClient.patch<T, AxiosResponse<T>, D>(
-        url,
-        data,
-        config
-      );
+      const response = await httpClient.get<PaginatedResponse<T>>(url, config);
       return response.data;
     } catch (error) {
       throw handleApiError(error);
     }
   }
 
-  static async delete<T = unknown>(
-    url: string,
-    config?: AxiosRequestConfig
-  ): Promise<T> {
-    try {
-      const response = await httpClient.delete<T, AxiosResponse<T>>(
-        url,
-        config
-      );
-      return response.data;
-    } catch (error) {
-      throw handleApiError(error);
-    }
-  }
-
-  static async upload<T = unknown>(
+  static async upload<T = any>(
     url: string,
     formData: FormData,
     onUploadProgress?: (progressEvent: any) => void
-  ): Promise<T> {
+  ): Promise<ApiResponse<T>> {
     try {
-      const response = await httpClient.post<T>(url, formData, {
+      const response = await httpClient.post<ApiResponse<T>>(url, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -120,6 +123,7 @@ export class ApiService {
     }
   }
 }
+
 // Exportaciones individuales para compatibilidad
 export const api = {
   get: ApiService.get,
@@ -127,6 +131,7 @@ export const api = {
   put: ApiService.put,
   patch: ApiService.patch,
   delete: ApiService.delete,
+  getPaginated: ApiService.getPaginated,
   upload: ApiService.upload,
   download: ApiService.download,
   endpoints: API_ENDPOINTS,
