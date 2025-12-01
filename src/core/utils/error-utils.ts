@@ -1,3 +1,5 @@
+// core/utils/error-utils.ts
+
 import {
   type ERROR_CODE,
   type ERROR_CATEGORY,
@@ -8,12 +10,11 @@ import {
   STALL_ERRORS,
   MERCHANT_ERRORS,
   PAYMENT_ERRORS,
-} from "@/core/constants/error-codes";
+} from "../constants";
 
 /**
  * Utilidades para manejo de errores
  */
-
 export const getErrorCategory = (errorCode: ERROR_CODE): ERROR_CATEGORY => {
   if (errorCode.startsWith("SYS_")) return "SYSTEM";
   if (errorCode.startsWith("NET_")) return "NETWORK";

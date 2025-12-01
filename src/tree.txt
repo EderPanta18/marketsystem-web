@@ -1,0 +1,67 @@
+Listado de rutas de carpetas para el volumen Data
+El número de serie del volumen es E885-FE15
+D:.
+¦   middleware.ts
+¦   tree.txt
+¦   
++---app
+¦   ¦   globals.css
+¦   ¦   layout.tsx
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---api
+¦       +---backend
+¦           +---[...path]
+¦                   route.ts
+¦                   
++---core
+¦   +---api
+¦   ¦       api.types.ts
+¦   ¦       endpoints.factory.ts
+¦   ¦       endpoints.ts
+¦   ¦       index.ts
+¦   ¦       
+¦   +---config
+¦   ¦       api.config.ts
+¦   ¦       app.config.ts
+¦   ¦       environment.ts
+¦   ¦       index.ts
+¦   ¦       security.config.ts
+¦   ¦       
+¦   +---constants
+¦   ¦       error-codes.ts
+¦   ¦       index.ts
+¦   ¦       permissions.ts
+¦   ¦       role-permissions.ts
+¦   ¦       roles.ts
+¦   ¦       
+¦   +---utils
+¦           error-utils.ts
+¦           
++---lib
+¦   +---api
+¦   ¦       api.client.ts
+¦   ¦       api.interceptor.ts
+¦   ¦       api.ts
+¦   ¦       cache-strategies.ts
+¦   ¦       error-handler.ts
+¦   ¦       index.ts
+¦   ¦       request-builder.ts
+¦   ¦       
+¦   +---crypto
+¦   ¦       encryption.ts
+¦   ¦       hashing.ts
+¦   ¦       index.ts
+¦   ¦       jwt.ts
+¦   ¦       security-utils.ts
+¦   ¦       
+¦   +---utils
+¦           array-utils.ts
+¦           date-utils.ts
+¦           index.ts
+¦           number-utils.ts
+¦           object-utils.ts
+¦           string-utils.ts
+¦           
++---middleware
++---modules
