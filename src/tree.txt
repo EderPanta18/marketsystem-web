@@ -1,67 +1,81 @@
 Listado de rutas de carpetas para el volumen Data
-El número de serie del volumen es E885-FE15
+El nï¿½mero de serie del volumen es E885-FE15
 D:.
-¦   middleware.ts
-¦   tree.txt
-¦   
+ï¿½   middleware.ts
+ï¿½   
 +---app
-¦   ¦   globals.css
-¦   ¦   layout.tsx
-¦   ¦   page.tsx
-¦   ¦   
-¦   +---api
-¦       +---backend
-¦           +---[...path]
-¦                   route.ts
-¦                   
+ï¿½   ï¿½   globals.css
+ï¿½   ï¿½   layout.tsx
+ï¿½   ï¿½   page.tsx
+ï¿½   ï¿½   
+ï¿½   +---api
+ï¿½       +---backend
+ï¿½           +---[...path]
+ï¿½                   route.ts
+ï¿½                   
 +---core
-¦   +---api
-¦   ¦       api.types.ts
-¦   ¦       endpoints.factory.ts
-¦   ¦       endpoints.ts
-¦   ¦       index.ts
-¦   ¦       
-¦   +---config
-¦   ¦       api.config.ts
-¦   ¦       app.config.ts
-¦   ¦       environment.ts
-¦   ¦       index.ts
-¦   ¦       security.config.ts
-¦   ¦       
-¦   +---constants
-¦   ¦       error-codes.ts
-¦   ¦       index.ts
-¦   ¦       permissions.ts
-¦   ¦       role-permissions.ts
-¦   ¦       roles.ts
-¦   ¦       
-¦   +---utils
-¦           error-utils.ts
-¦           
+ï¿½   +---api
+ï¿½   ï¿½       api.types.ts
+ï¿½   ï¿½       endpoints.factory.ts
+ï¿½   ï¿½       endpoints.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       
+ï¿½   +---config
+ï¿½   ï¿½       api.config.ts
+ï¿½   ï¿½       app.config.ts
+ï¿½   ï¿½       environment.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       routes.config.ts
+ï¿½   ï¿½       security.config.ts
+ï¿½   ï¿½       
+ï¿½   +---constants
+ï¿½   ï¿½       error-codes.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       permissions.ts
+ï¿½   ï¿½       role-permissions.ts
+ï¿½   ï¿½       roles.ts
+ï¿½   ï¿½       routes.ts
+ï¿½   ï¿½       
+ï¿½   +---dtos
+ï¿½   ï¿½   +---api
+ï¿½   ï¿½           auth.dto.ts
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           
+ï¿½   +---types
+ï¿½   ï¿½       auth.types.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       
+ï¿½   +---utils
+ï¿½           error-utils.ts
+ï¿½           index.ts
+ï¿½           permission-utils.ts
+ï¿½           role-utils.ts
+ï¿½           route-utils.ts
+ï¿½           
 +---lib
-¦   +---api
-¦   ¦       api.client.ts
-¦   ¦       api.interceptor.ts
-¦   ¦       api.ts
-¦   ¦       cache-strategies.ts
-¦   ¦       error-handler.ts
-¦   ¦       index.ts
-¦   ¦       request-builder.ts
-¦   ¦       
-¦   +---crypto
-¦   ¦       encryption.ts
-¦   ¦       hashing.ts
-¦   ¦       index.ts
-¦   ¦       jwt.ts
-¦   ¦       security-utils.ts
-¦   ¦       
-¦   +---utils
-¦           array-utils.ts
-¦           date-utils.ts
-¦           index.ts
-¦           number-utils.ts
-¦           object-utils.ts
-¦           string-utils.ts
-¦           
+ï¿½   +---api
+ï¿½   ï¿½       api.client.ts
+ï¿½   ï¿½       api.interceptor.ts
+ï¿½   ï¿½       api.ts
+ï¿½   ï¿½       cache-strategies.ts
+ï¿½   ï¿½       error-handler.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       request-builder.ts
+ï¿½   ï¿½       
+ï¿½   +---crypto
+ï¿½   ï¿½       encryption.ts
+ï¿½   ï¿½       hashing.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       jwt.ts
+ï¿½   ï¿½       security-utils.ts
+ï¿½   ï¿½       
+ï¿½   +---utils
+ï¿½           array-utils.ts
+ï¿½           date-utils.ts
+ï¿½           index.ts
+ï¿½           number-utils.ts
+ï¿½           object-utils.ts
+ï¿½           string-utils.ts
+ï¿½           
 +---middleware
 +---modules

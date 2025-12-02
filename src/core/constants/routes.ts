@@ -14,7 +14,7 @@ export const SYSTEM_ROUTE = {
   NOTIFICATIONS: "/sistema/notificaciones",
   PROFILE: "/sistema/perfil",
   CONFIG: "/sistema/configuracion",
-  DENIED: "/sistema/denegado",
+  STATUS: "/status/estado",
 } as const;
 
 /**

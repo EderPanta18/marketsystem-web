@@ -6,6 +6,7 @@ export const SYSTEM_ERRORS = {
   SERVICE_UNAVAILABLE: "SYS_002",
   MAINTENANCE_MODE: "SYS_003",
   CONFIGURATION_ERROR: "SYS_004",
+  BACKEND_TIMEOUT: "SYS_005",
 } as const;
 
 export const NETWORK_ERRORS = {
@@ -53,6 +54,7 @@ export const AUTH_ERRORS = {
   INSUFFICIENT_PERMISSIONS: "AUTH_006",
   SESSION_EXPIRED: "AUTH_007",
   EMAIL_ALREADY_EXISTS: "AUTH_008",
+  ROLE_MISMATCH: "AUTH_010",
 } as const;
 
 export const MARKET_ERRORS = {
@@ -111,11 +113,13 @@ export const ERROR_MESSAGES: Record<ERROR_CODE, string> = {
   [SYSTEM_ERRORS.SERVICE_UNAVAILABLE]: "Servicio no disponible",
   [SYSTEM_ERRORS.MAINTENANCE_MODE]: "Sistema en mantenimiento",
   [SYSTEM_ERRORS.CONFIGURATION_ERROR]: "Error de configuración",
+  [SYSTEM_ERRORS.BACKEND_TIMEOUT]:
+    "Procesando datos de sesión. Por favor, espere.",
 
   // Red
   [NETWORK_ERRORS.NETWORK_ERROR]: "Error de conexión de red",
-  [NETWORK_ERRORS.TIMEOUT]: "Timeout de la solicitud",
-  [NETWORK_ERRORS.CONNECTION_FAILED]: "Conexión fallida",
+  [NETWORK_ERRORS.TIMEOUT]: "Tiempo de conexión agotado",
+  [NETWORK_ERRORS.CONNECTION_FAILED]: "Fallo al conectar con el servidor",
 
   // Validación
   [VALIDATION_ERRORS.INVALID_INPUT]: "Datos de entrada inválidos",
@@ -150,6 +154,7 @@ export const ERROR_MESSAGES: Record<ERROR_CODE, string> = {
   [AUTH_ERRORS.INSUFFICIENT_PERMISSIONS]: "Permisos insuficientes",
   [AUTH_ERRORS.SESSION_EXPIRED]: "Sesión expirada",
   [AUTH_ERRORS.EMAIL_ALREADY_EXISTS]: "El email ya está registrado",
+  [AUTH_ERRORS.ROLE_MISMATCH]: "Acceso denegado. Rol de usuario no autorizado",
 
   // Mercados
   [MARKET_ERRORS.MARKET_NOT_FOUND]: "Mercado no encontrado",
