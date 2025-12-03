@@ -1,8 +1,8 @@
 import { AxiosRequestConfig } from "axios";
 import {
   API_ENDPOINTS,
-  type ApiResponse,
-  type PaginatedResponse,
+  ApiSuccessResponse,
+  PaginatedSuccessResponse,
 } from "@/core/api";
 import { httpClient } from "./api.client";
 import { handleApiError } from "./error-handler";
@@ -14,9 +14,9 @@ export class ApiService {
   static async get<T = any>(
     url: string,
     config?: AxiosRequestConfig
-  ): Promise<ApiResponse<T>> {
+  ): Promise<ApiSuccessResponse<T>> {
     try {
-      const response = await httpClient.get<ApiResponse<T>>(url, config);
+      const response = await httpClient.get<ApiSuccessResponse<T>>(url, config);
       return response.data;
     } catch (error) {
       throw handleApiError(error);
@@ -27,9 +27,13 @@ export class ApiService {
     url: string,
     data?: D,
     config?: AxiosRequestConfig
-  ): Promise<ApiResponse<T>> {
+  ): Promise<ApiSuccessResponse<T>> {
     try {
-      const response = await httpClient.post<ApiResponse<T>>(url, data, config);
+      const response = await httpClient.post<ApiSuccessResponse<T>>(
+        url,
+        data,
+        config
+      );
       return response.data;
     } catch (error) {
       throw handleApiError(error);
@@ -40,9 +44,13 @@ export class ApiService {
     url: string,
     data?: D,
     config?: AxiosRequestConfig
-  ): Promise<ApiResponse<T>> {
+  ): Promise<ApiSuccessResponse<T>> {
     try {
-      const response = await httpClient.put<ApiResponse<T>>(url, data, config);
+      const response = await httpClient.put<ApiSuccessResponse<T>>(
+        url,
+        data,
+        config
+      );
       return response.data;
     } catch (error) {
       throw handleApiError(error);
@@ -53,9 +61,9 @@ export class ApiService {
     url: string,
     data?: D,
     config?: AxiosRequestConfig
-  ): Promise<ApiResponse<T>> {
+  ): Promise<ApiSuccessResponse<T>> {
     try {
-      const response = await httpClient.patch<ApiResponse<T>>(
+      const response = await httpClient.patch<ApiSuccessResponse<T>>(
         url,
         data,
         config
@@ -69,9 +77,12 @@ export class ApiService {
   static async delete<T = any>(
     url: string,
     config?: AxiosRequestConfig
-  ): Promise<ApiResponse<T>> {
+  ): Promise<ApiSuccessResponse<T>> {
     try {
-      const response = await httpClient.delete<ApiResponse<T>>(url, config);
+      const response = await httpClient.delete<ApiSuccessResponse<T>>(
+        url,
+        config
+      );
       return response.data;
     } catch (error) {
       throw handleApiError(error);
@@ -81,9 +92,12 @@ export class ApiService {
   static async getPaginated<T = any>(
     url: string,
     config?: AxiosRequestConfig
-  ): Promise<PaginatedResponse<T>> {
+  ): Promise<PaginatedSuccessResponse<T>> {
     try {
-      const response = await httpClient.get<PaginatedResponse<T>>(url, config);
+      const response = await httpClient.get<PaginatedSuccessResponse<T>>(
+        url,
+        config
+      );
       return response.data;
     } catch (error) {
       throw handleApiError(error);
@@ -94,14 +108,18 @@ export class ApiService {
     url: string,
     formData: FormData,
     onUploadProgress?: (progressEvent: any) => void
-  ): Promise<ApiResponse<T>> {
+  ): Promise<ApiSuccessResponse<T>> {
     try {
-      const response = await httpClient.post<ApiResponse<T>>(url, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        onUploadProgress,
-      });
+      const response = await httpClient.post<ApiSuccessResponse<T>>(
+        url,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          onUploadProgress,
+        }
+      );
       return response.data;
     } catch (error) {
       throw handleApiError(error);

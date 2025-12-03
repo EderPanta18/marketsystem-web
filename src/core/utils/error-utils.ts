@@ -23,6 +23,7 @@ export const getErrorCategory = (errorCode: ERROR_CODE): ERROR_CATEGORY => {
   if (errorCode.startsWith("FILE_")) return "FILE";
   if (errorCode.startsWith("RES_")) return "RESOURCE";
   if (errorCode.startsWith("AUTH_")) return "AUTH";
+  if (errorCode.startsWith("SESS_")) return "SESSION";
   if (errorCode.startsWith("MARKET_")) return "MARKET";
   if (errorCode.startsWith("STALL_")) return "STALL";
   if (errorCode.startsWith("MERCHANT_")) return "MERCHANT";
@@ -99,6 +100,12 @@ export const isResourceError = (errorCode: ERROR_CODE): boolean => {
 
 export const isAuthError = (errorCode: ERROR_CODE): boolean => {
   return getErrorCategory(errorCode) === "AUTH";
+};
+
+export const isSessionError = (errorCode: ERROR_CODE): boolean => {
+  return (
+    getErrorCategory(errorCode) === "AUTH" && errorCode.startsWith("SESS_")
+  );
 };
 
 export const isMarketError = (errorCode: ERROR_CODE): boolean => {

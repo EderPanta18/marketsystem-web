@@ -1,11 +1,6 @@
 // core/utils/route-utils.ts
 
-import {
-  PROTECTED_PATHS,
-  RESTRICTED_PATHS,
-  SYSTEM_PATHS,
-  PUBLIC_PATHS,
-} from "../constants";
+import { PROTECTED_PATHS, SYSTEM_PATHS, PUBLIC_PATHS } from "../constants";
 
 /**
  * Verifica si un path es una ruta pública.
@@ -29,14 +24,6 @@ export const isProtectedPath = (path: string): boolean => {
  */
 export const isSystemPath = (path: string): boolean => {
   return SYSTEM_PATHS.includes(path);
-};
-
-/**
- * Verifica si un path es una ruta restringida (ej: errores).
- * @param path Ruta a verificar.
- */
-export const isRestrictedPath = (path: string): boolean => {
-  return RESTRICTED_PATHS.includes(path);
 };
 
 /**

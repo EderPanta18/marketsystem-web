@@ -1,5 +1,8 @@
 // core/constants/error-codes.ts
 
+import { unauthorized } from "next/navigation";
+import { ROLE } from "./roles";
+
 // Errores globales
 export const SYSTEM_ERRORS = {
   INTERNAL_ERROR: "SYS_001",
@@ -57,6 +60,14 @@ export const AUTH_ERRORS = {
   ROLE_MISMATCH: "AUTH_010",
 } as const;
 
+export const SESSION_ERRORS = {
+  DEFAULT: "SESS_001",
+  BACKEND_TIMEOUT: "SESS_002",
+  SESSION_EXPIRED: "SESS_003",
+  SESSION_INVALID: "SESS_004",
+  ROLE_MISMATCH: "SESS_005",
+} as const;
+
 export const MARKET_ERRORS = {
   MARKET_NOT_FOUND: "MARKET_001",
   MARKET_ALREADY_EXISTS: "MARKET_002",
@@ -66,6 +77,7 @@ export const MARKET_ERRORS = {
 } as const;
 
 export const STALL_ERRORS = {
+  DEFAULT: "STALL_000",
   STALL_NOT_FOUND: "STALL_001",
   STALL_ALREADY_ASSIGNED: "STALL_002",
   INVALID_NUMBER: "STALL_003",
@@ -98,6 +110,7 @@ export const ERROR_CODES = {
   ...FILE_ERRORS,
   ...RESOURCE_ERRORS,
   ...AUTH_ERRORS,
+  ...SESSION_ERRORS,
   ...MARKET_ERRORS,
   ...STALL_ERRORS,
   ...MERCHANT_ERRORS,
@@ -107,14 +120,13 @@ export const ERROR_CODES = {
 export type ERROR_CODE = (typeof ERROR_CODES)[keyof typeof ERROR_CODES];
 
 // Mensajes de error por código
-export const ERROR_MESSAGES: Record<ERROR_CODE, string> = {
+export const ERROR_MESSAGES: Record<string, string> = {
   // Sistema
   [SYSTEM_ERRORS.INTERNAL_ERROR]: "Error interno del sistema",
   [SYSTEM_ERRORS.SERVICE_UNAVAILABLE]: "Servicio no disponible",
   [SYSTEM_ERRORS.MAINTENANCE_MODE]: "Sistema en mantenimiento",
   [SYSTEM_ERRORS.CONFIGURATION_ERROR]: "Error de configuración",
-  [SYSTEM_ERRORS.BACKEND_TIMEOUT]:
-    "Procesando datos de sesión. Por favor, espere.",
+  [SYSTEM_ERRORS.BACKEND_TIMEOUT]: "Tiempo de espera del sistema agotado",
 
   // Red
   [NETWORK_ERRORS.NETWORK_ERROR]: "Error de conexión de red",
@@ -156,6 +168,16 @@ export const ERROR_MESSAGES: Record<ERROR_CODE, string> = {
   [AUTH_ERRORS.EMAIL_ALREADY_EXISTS]: "El email ya está registrado",
   [AUTH_ERRORS.ROLE_MISMATCH]: "Acceso denegado. Rol de usuario no autorizado",
 
+  [SESSION_ERRORS.DEFAULT]: "Error de sesión desconocido",
+  [SESSION_ERRORS.BACKEND_TIMEOUT]:
+    "El sistema está procesando su sesión. Por favor, espere.",
+  [SESSION_ERRORS.SESSION_EXPIRED]:
+    "Su sesión ha expirado. Por favor, inicie sesión nuevamente.",
+  [SESSION_ERRORS.SESSION_INVALID]:
+    "Sesión inválida. Por favor, inicie sesión nuevamente.",
+  [SESSION_ERRORS.ROLE_MISMATCH]:
+    "Acceso denegado. Rol de usuario no autorizado",
+
   // Mercados
   [MARKET_ERRORS.MARKET_NOT_FOUND]: "Mercado no encontrado",
   [MARKET_ERRORS.MARKET_ALREADY_EXISTS]: "Ya existe un mercado con ese nombre",
@@ -195,6 +217,7 @@ export type ERROR_CATEGORY =
   | "FILE"
   | "RESOURCE"
   | "AUTH"
+  | "SESSION"
   | "MARKET"
   | "STALL"
   | "MERCHANT"

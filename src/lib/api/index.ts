@@ -5,4 +5,6 @@ export { RequestBuilder, RequestUtils } from "./request-builder";
 
 export { handleApiError } from "./error-handler";
 
+export { safeApi } from "./safe-api";
+
 export { default } from "./api";

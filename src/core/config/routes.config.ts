@@ -35,8 +35,8 @@ export const ROUTE: RouteConfig[] = [
   },
 
   // Rutas que requieren autenticación pero cualquier rol
-  { path: SYSTEM_ROUTE.INBOX, requiredRoles: [] },
-  { path: SYSTEM_ROUTE.NOTIFICATIONS, requiredRoles: [] },
-  { path: SYSTEM_ROUTE.PROFILE, requiredRoles: [] },
-  { path: SYSTEM_ROUTE.CONFIG, requiredRoles: [] },
+  { path: SYSTEM_ROUTE.INBOX },
+  { path: SYSTEM_ROUTE.NOTIFICATIONS },
+  { path: SYSTEM_ROUTE.PROFILE },
+  { path: SYSTEM_ROUTE.CONFIG },
 ];

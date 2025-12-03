@@ -1,6 +1,6 @@
 // lib/crypto/jwt.ts
 
-import { jwtVerify, SignJWT, type JWTPayload } from "jose";
+import { decodeJwt, jwtVerify, SignJWT, type JWTPayload } from "jose";
 
 export class JWTService {
   /**
@@ -71,6 +71,19 @@ export class JWTService {
       return payload;
     } catch {
       return null;
+    }
+  }
+
+  // Verifica si un token ha expirado
+  static isTokenExpired(token: string): boolean {
+    try {
+      const { exp } = decodeJwt(token) as { exp?: number };
+      if (!exp) return false;
+
+      const now = Math.floor(Date.now() / 1000) + 5; // pequeño clock skew
+      return exp < now;
+    } catch {
+      return true;
     }
   }
 }
