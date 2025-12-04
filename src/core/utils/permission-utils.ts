@@ -1,7 +1,7 @@
 // core/utils/permission-utils.ts
 
 import { PERMISSION, ROLE_PERMISSIONS } from "../constants";
-import { AuthIdentity } from "@/core/types/auth.types";
+import { AuthIdentity } from "../types";
 
 // Resuelve los permisos efectivos de un usuario basado en su identidad.
 export function resolveEffectivePermissions(

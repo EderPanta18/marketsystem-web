@@ -1,35 +1,67 @@
 // src/services/auth/auth-service.ts
 
-import { apiClient } from "@/lib/api"; // desde lib/api/index.ts
-import { API_ENDPOINTS } from "@/core/api"; // desde core/api/endpoints.ts
+import { apiClient } from "@/lib/api";
+import { API_ENDPOINTS } from "@/core/api"; // endpoints de core
 import type {
   LoginRequestDTO,
   RegisterRequestDTO,
   MeResponseDTO,
 } from "@/core/dtos/api";
+import type { AuthUser } from "@/core/types";
+import { safeApi, type ApiResult } from "@/lib/api";
+import { PERMISSION, ROLE } from "@/core/constants";
+
+// Mapper MeResponseDTO -> AuthUser (ajusta campos según tu DTO real)
+function mapMeToAuthUser(me: MeResponseDTO): AuthUser {
+  return {
+    identity: {
+      id: me.identity.id,
+      role: me.identity.role as ROLE,
+      permissions: me.identity.permissions as PERMISSION[],
+    },
+    profile: {
+      id: me.profile.id,
+      fullName: me.profile.fullName,
+      email: me.profile.email,
+    },
+  };
+}
 
 export class AuthService {
-  static async login(payload: LoginRequestDTO): Promise<void> {
-    await apiClient.post(API_ENDPOINTS.AUTH.LOGIN, payload);
+  // LOGIN
+  static login(payload: LoginRequestDTO): Promise<ApiResult<void>> {
+    return safeApi<void>(async () => {
+      await apiClient.post(API_ENDPOINTS.AUTH.LOGIN, payload);
+    });
   }
 
-  static async register(payload: RegisterRequestDTO): Promise<void> {
-    await apiClient.post<void>(API_ENDPOINTS.AUTH.REGISTER, payload);
+  // REGISTER
+  static register(payload: RegisterRequestDTO): Promise<ApiResult<void>> {
+    return safeApi<void>(async () => {
+      await apiClient.post(API_ENDPOINTS.AUTH.REGISTER, payload);
+    });
   }
 
-  static async me(): Promise<MeResponseDTO> {
-    const response = await apiClient.get<MeResponseDTO>(API_ENDPOINTS.AUTH.ME);
-    return response.data;
+  // ME
+  static me(): Promise<ApiResult<AuthUser>> {
+    return safeApi<AuthUser>(async () => {
+      const res = await apiClient.get<MeResponseDTO>(API_ENDPOINTS.AUTH.ME);
+      return mapMeToAuthUser(res.data);
+    });
   }
 
-  static async logout(): Promise<void> {
-    await apiClient.post<void>(API_ENDPOINTS.AUTH.LOGOUT);
-    // El backend debe limpiar las cookies HttpOnly en la respuesta.
+  // LOGOUT
+  static logout(): Promise<ApiResult<void>> {
+    return safeApi<void>(async () => {
+      await apiClient.post(API_ENDPOINTS.AUTH.LOGOUT);
+    });
   }
 
-  static async refresh(): Promise<void> {
-    // Normalmente no necesitas el body; el backend lee refreshToken de la cookie.
-    await apiClient.post<void>(API_ENDPOINTS.AUTH.REFRESH);
+  // REFRESH
+  static refresh(): Promise<ApiResult<void>> {
+    return safeApi<void>(async () => {
+      await apiClient.post(API_ENDPOINTS.AUTH.REFRESH);
+    });
   }
 }
 

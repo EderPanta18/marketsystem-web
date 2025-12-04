@@ -49,15 +49,9 @@ export const RESOURCE_ERRORS = {
 
 // Errores por módulo
 export const AUTH_ERRORS = {
-  UNAUTHORIZED: "AUTH_001",
+  ACCESS_DENIED: "AUTH_001",
   INVALID_CREDENTIALS: "AUTH_002",
-  TOKEN_EXPIRED: "AUTH_003",
-  TOKEN_INVALID: "AUTH_004",
-  ACCESS_DENIED: "AUTH_005",
-  INSUFFICIENT_PERMISSIONS: "AUTH_006",
-  SESSION_EXPIRED: "AUTH_007",
-  EMAIL_ALREADY_EXISTS: "AUTH_008",
-  ROLE_MISMATCH: "AUTH_010",
+  EMAIL_ALREADY_EXISTS: "AUTH_008", // para login no es
 } as const;
 
 export const SESSION_ERRORS = {
@@ -158,16 +152,11 @@ export const ERROR_MESSAGES: Record<string, string> = {
   [RESOURCE_ERRORS.RESOURCE_UNAVAILABLE]: "Recurso no disponible",
 
   // Autenticación
-  [AUTH_ERRORS.UNAUTHORIZED]: "No autorizado para acceder a este recurso",
   [AUTH_ERRORS.INVALID_CREDENTIALS]: "Credenciales inválidas",
-  [AUTH_ERRORS.TOKEN_EXPIRED]: "Token de acceso expirado",
-  [AUTH_ERRORS.TOKEN_INVALID]: "Token de acceso inválido",
   [AUTH_ERRORS.ACCESS_DENIED]: "Acceso denegado",
-  [AUTH_ERRORS.INSUFFICIENT_PERMISSIONS]: "Permisos insuficientes",
-  [AUTH_ERRORS.SESSION_EXPIRED]: "Sesión expirada",
   [AUTH_ERRORS.EMAIL_ALREADY_EXISTS]: "El email ya está registrado",
-  [AUTH_ERRORS.ROLE_MISMATCH]: "Acceso denegado. Rol de usuario no autorizado",
 
+  // Sesión
   [SESSION_ERRORS.DEFAULT]: "Error de sesión desconocido",
   [SESSION_ERRORS.BACKEND_TIMEOUT]:
     "El sistema está procesando su sesión. Por favor, espere.",

@@ -15,6 +15,14 @@ export interface RegisterRequestDTO {
 }
 
 export interface MeResponseDTO {
-  identity: AuthIdentity;
-  profile: UserProfile;
+  identity: {
+    id: string;
+    role: string;
+    permissions: string[];
+  };
+  profile: {
+    id: string;
+    fullName: string;
+    email: string;
+  };
 }

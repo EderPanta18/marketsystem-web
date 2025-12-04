@@ -10,11 +10,8 @@ export interface AuthIdentity {
 
 export interface UserProfile {
   id: string;
-  dni: string;
-  name: string;
-  lastName: string;
+  fullName: string;
   email?: string;
-  phone?: string;
 }
 
 export interface AuthUser {
