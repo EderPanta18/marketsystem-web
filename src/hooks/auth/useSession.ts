@@ -7,15 +7,9 @@ import { useAuthStore } from "@/stores";
 
 export function useSession() {
   const { user, status, setUser, setLoading } = useAuthStore();
-  const [session, setSession] = useState<Session>({
-    kind: "loading",
-    isAuthenticated: false,
-    user: null,
-  });
-  const [isHydrating, setIsHydrating] = useState(false);
+  const [session, setSession] = useState<Session | null>(null);
 
   const hydrate = useCallback(async () => {
-    setIsHydrating(true);
     setLoading();
 
     const s = await SessionService.getCurrentSession();
@@ -26,8 +20,6 @@ export function useSession() {
     } else {
       setUser(null); // status pasa a 'unauthenticated'
     }
-
-    setIsHydrating(false);
   }, [setUser, setLoading]);
 
   useEffect(() => {
@@ -39,7 +31,6 @@ export function useSession() {
     user, // UserSession desde el store
     status, // SessionStatus desde el store
     isAuthenticated: status === "authenticated",
-    isHydrating,
     hydrate,
   };
 }

@@ -3,12 +3,6 @@
 import type { AuthUser } from "@/core/types";
 import type { ERROR_CODE } from "@/core/constants";
 
-export interface SessionLoading {
-  kind: "loading";
-  isAuthenticated: false;
-  user: null;
-}
-
 export interface SessionAuthenticated {
   kind: "authenticated";
   isAuthenticated: true;
@@ -19,14 +13,11 @@ export interface SessionUnauthenticated {
   kind: "unauthenticated";
   isAuthenticated: false;
   user: null;
-  errorCode?: ERROR_CODE;
-  errorMessage?: string;
+  errorCode: ERROR_CODE;
+  errorMessage: string;
 }
 
-export type Session =
-  | SessionLoading
-  | SessionAuthenticated
-  | SessionUnauthenticated;
+export type Session = SessionAuthenticated | SessionUnauthenticated;
 
 export type SessionStatus =
   | "idle" // aún no se intentó hidratar
