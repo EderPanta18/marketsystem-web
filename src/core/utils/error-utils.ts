@@ -38,7 +38,6 @@ export const isRecoverableError = (errorCode: ERROR_CODE): boolean => {
 
     // Errores de validación
     ERROR_CODES.INVALID_INPUT,
-    ERROR_CODES.INVALID_EMAIL,
     ERROR_CODES.INVALID_PHONE,
 
     // Errores de archivos
@@ -48,7 +47,6 @@ export const isRecoverableError = (errorCode: ERROR_CODE): boolean => {
     ERROR_CODES.RESOURCE_ALREADY_EXISTS,
 
     // Errores de autenticación
-    AUTH_ERRORS.INSUFFICIENT_PERMISSIONS,
     AUTH_ERRORS.ACCESS_DENIED,
 
     // Errores de negocio críticos
@@ -122,34 +120,6 @@ export const isMerchantError = (errorCode: ERROR_CODE): boolean => {
 
 export const isPaymentError = (errorCode: ERROR_CODE): boolean => {
   return getErrorCategory(errorCode) === "PAYMENT";
-};
-
-/**
- * Determina si se debe mostrar un botón de reintento
- */
-export const shouldShowRetry = (errorCode: ERROR_CODE): boolean => {
-  const nonRetryable = [
-    AUTH_ERRORS.INSUFFICIENT_PERMISSIONS,
-    AUTH_ERRORS.ACCESS_DENIED,
-    MARKET_ERRORS.CANT_DELETE_WITH_STALLS,
-    PAYMENT_ERRORS.ALREADY_PROCESSED,
-  ] as ERROR_CODE[];
-
-  return !nonRetryable.includes(errorCode);
-};
-
-/**
- * Determina si se debe redirigir al login
- */
-export const shouldRedirectToLogin = (errorCode: ERROR_CODE): boolean => {
-  const loginRedirectErrors = [
-    AUTH_ERRORS.UNAUTHORIZED,
-    AUTH_ERRORS.TOKEN_EXPIRED,
-    AUTH_ERRORS.SESSION_EXPIRED,
-    AUTH_ERRORS.TOKEN_INVALID,
-  ] as ERROR_CODE[];
-
-  return loginRedirectErrors.includes(errorCode);
 };
 
 /**
