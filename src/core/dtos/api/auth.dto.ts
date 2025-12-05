@@ -1,7 +1,5 @@
 // core/dtos/api/auth.dto.ts
 
-import { AuthIdentity, UserProfile } from "@/core/types";
-
 export interface LoginRequestDTO {
   email: string;
   password: string;
