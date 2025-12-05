@@ -1,3 +1,3 @@
 export default function LoginPage() {
-  return <div>Pagina de logueo</div>;
+  return <div>Pagina de logueo z</div>;
 }
