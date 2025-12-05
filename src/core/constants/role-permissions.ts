@@ -9,5 +9,4 @@ export const ROLE_PERMISSIONS: Record<ROLE, readonly PERMISSION[]> = {
   [ROLE.COORDINATOR]: [] as const,
   [ROLE.MERCHANT]: [] as const,
   [ROLE.COLLECTOR]: [] as const,
-  [ROLE.UNKNOWN]: [] as const,
 };

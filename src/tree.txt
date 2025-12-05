@@ -1,7 +1,7 @@
 Listado de rutas de carpetas para el volumen Data
 El número de serie del volumen es E885-FE15
 D:.
-¦   middleware.ts
+¦   proxy.ts
 ¦   tree.txt
 ¦   
 +---app
@@ -9,6 +9,18 @@ D:.
 ¦   ¦   layout.tsx
 ¦   ¦   page.tsx
 ¦   ¦   
+¦   +---(protected)
+¦   ¦   ¦   layout.tsx
+¦   ¦   ¦   
+¦   ¦   +---sistema
+¦   ¦       ¦   page.tsx
+¦   ¦       ¦   
+¦   ¦       +---panel
+¦   ¦       +---usuarios
+¦   +---(public)
+¦   ¦   +---login
+¦   ¦           page.tsx
+¦   ¦           
 ¦   +---api
 ¦       +---backend
 ¦           +---[...path]
@@ -45,6 +57,7 @@ D:.
 ¦   +---types
 ¦   ¦       auth.types.ts
 ¦   ¦       index.ts
+¦   ¦       session.types.ts
 ¦   ¦       
 ¦   +---utils
 ¦           error-utils.ts
@@ -53,15 +66,23 @@ D:.
 ¦           role-utils.ts
 ¦           route-utils.ts
 ¦           
++---hooks
+¦   +---auth
+¦           index.ts
+¦           useAuth.ts
+¦           usePermissions.ts
+¦           useSession.ts
+¦           useUserProfile.ts
+¦           
 +---lib
 ¦   +---api
 ¦   ¦       api.client.ts
 ¦   ¦       api.interceptor.ts
 ¦   ¦       api.ts
-¦   ¦       cache-strategies.ts
 ¦   ¦       error-handler.ts
 ¦   ¦       index.ts
 ¦   ¦       request-builder.ts
+¦   ¦       safe-api.ts
 ¦   ¦       
 ¦   +---crypto
 ¦   ¦       encryption.ts
@@ -94,7 +115,20 @@ D:.
 ¦           token.utils.ts
 ¦           
 +---modules
+¦   +---auth
+¦       +---components
+¦       +---hooks
+¦       +---utils
++---providers
 +---services
-    +---auth
-            session-service.ts
-            
+¦   +---auth
+¦           auth-service.ts
+¦           index.ts
+¦           session-service.ts
+¦           
++---shared
++---stores
+¦       auth.store.ts
+¦       index.ts
+¦       
++---widgets
