@@ -1,8 +1,5 @@
 // core/constants/error-codes.ts
 
-import { unauthorized } from "next/navigation";
-import { ROLE } from "./roles";
-
 // Errores globales
 export const SYSTEM_ERRORS = {
   INTERNAL_ERROR: "SYS_001",

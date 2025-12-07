@@ -2,10 +2,10 @@
 
 "use client";
 
-import * as React from "react";
+import React from "react";
 import NextImage from "next/image";
-import type { ImageProps } from "./Image.types";
 import { cn } from "@/shared/utils";
+import type { ImageProps } from "./Image.types";
 import { getImageClassName, getSkeletonClassName } from "./Image.helpers";
 
 export const Image: React.FC<ImageProps> = ({
@@ -43,16 +43,12 @@ export const Image: React.FC<ImageProps> = ({
         <div className={cn("absolute inset-0", skeletonClassName)} />
       )}
 
-      {fullSize ? (
-        <NextImage
-          fill
-          className={imageClassName}
-          onLoad={handleLoad}
-          {...props}
-        />
-      ) : (
-        <NextImage className={imageClassName} onLoad={handleLoad} {...props} />
-      )}
+      <NextImage
+        fill={fullSize}
+        className={imageClassName}
+        onLoad={handleLoad}
+        {...props}
+      />
     </div>
   );
 };

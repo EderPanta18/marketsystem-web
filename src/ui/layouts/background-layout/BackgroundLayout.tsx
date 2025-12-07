@@ -40,6 +40,8 @@ export const BackgroundLayout: React.FC<BackgroundLayoutProps> = ({
           fit="cover"
           showSkeleton
           skeletonVariant="pulse"
+          loading="eager"
+          fetchPriority="high"
         />
       </div>
 

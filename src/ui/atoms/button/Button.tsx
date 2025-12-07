@@ -42,7 +42,11 @@ export const Button: React.FC<ButtonProps> = ({
         variant === "solid" && "shadow-sm hover:shadow-md",
         fullWidth && "w-full",
         isDisabled && "opacity-60",
-        loading && "cursor-wait",
+        loading && [
+          "cursor-wait",
+          // desactivar efectos de hover mientras carga
+          "hover:shadow-sm hover:brightness-100",
+        ],
         className
       )}
       disabled={isDisabled}

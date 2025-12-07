@@ -16,11 +16,12 @@ export default function PublicLayout({
     <BackgroundLayout imageSrc={backgroundImgSrc} imageAlt="Fondo de Piura">
       <header className="pointer-events-none absolute inset-x-0 top-12 flex justify-center">
         <div className="flex items-center gap-3 px-4">
-          <div className="relative size-24">
+          <div className="relative">
             <Image
               src={genericMarketImgSrc}
               alt="Logo mercados"
-              fullSize
+              width={96}
+              height={96}
               fit="contain"
             />
           </div>
@@ -35,11 +36,12 @@ export default function PublicLayout({
 
       <footer className="pointer-events-none absolute inset-x-0 bottom-5 flex px-4 justify-center md:justify-start">
         <div className="flex items-center gap-3">
-          <div className="relative size-18">
+          <div className="relative">
             <Image
               src={muniLogoImgSrc}
               alt="Municipalidad Distrital de Veintiséis de Octubre"
-              fullSize
+              width={72}
+              height={72}
               fit="contain"
             />
           </div>
