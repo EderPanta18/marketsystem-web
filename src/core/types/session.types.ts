@@ -13,7 +13,7 @@ export interface SessionUnauthenticated {
   kind: "unauthenticated";
   isAuthenticated: false;
   user: null;
-  errorCode: ERROR_CODE;
+  errorCode: ERROR_CODE | string;
   errorMessage: string;
 }
 

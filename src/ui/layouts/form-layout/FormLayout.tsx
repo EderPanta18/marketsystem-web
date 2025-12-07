@@ -1,6 +1,6 @@
 // ui/layouts/form-layout/FormLayout.tsx
 
-import * as React from "react";
+import React from "react";
 import { cn } from "@/shared/utils";
 import type { FormLayoutProps } from "./FormLayout.types";
 import {
@@ -18,7 +18,6 @@ export const FormLayout: React.FC<FormLayoutProps> = ({
   errorMessage,
   successMessage,
   actions,
-  secondaryActions,
   children,
   className,
   ...props
@@ -28,10 +27,10 @@ export const FormLayout: React.FC<FormLayoutProps> = ({
 
   const hasHeader = headerTitle || headerDescription || showRequiredLegend;
   const hasMessages = errorMessage || successMessage;
-  const hasFooter = actions || secondaryActions || hasMessages;
+  const hasFooter = actions || hasMessages;
 
   return (
-    <form className={cn(containerClasses, className)} {...props}>
+    <div className={cn(containerClasses, className)} {...props}>
       {hasHeader && (
         <header className="mb-6 text-center">
           {headerTitle && (
@@ -51,29 +50,28 @@ export const FormLayout: React.FC<FormLayoutProps> = ({
       <section className={gridClasses}>{children}</section>
 
       {hasFooter && (
-        <footer className="mt-6 space-y-3 flex flex-col place-items-center">
-          {hasMessages && (
-            <div className="text-sm">
-              {errorMessage && <p className="text-red-600">{errorMessage}</p>}
-              {successMessage && !errorMessage && (
-                <p className="text-green-600">{successMessage}</p>
-              )}
+        <footer className="mt-5 flex flex-col items-stretch gap-3">
+          {actions && (
+            <div className="w-full flex items-center justify-center">
+              <div className="w-full">{actions}</div>
             </div>
           )}
 
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            {secondaryActions && (
-              <div className="flex items-center gap-2">{secondaryActions}</div>
-            )}
-            {actions && (
-              <div className="w-full sm:w-auto flex items-center gap-2">
-                {actions}
-              </div>
+          <div className="min-h-5 flexitems-center justify-center">
+            {hasMessages && (
+              <p
+                className={cn(
+                  "text-sm text-center",
+                  errorMessage ? "text-red-600" : "text-green-600"
+                )}
+              >
+                {errorMessage ?? successMessage}
+              </p>
             )}
           </div>
         </footer>
       )}
-    </form>
+    </div>
   );
 };
 

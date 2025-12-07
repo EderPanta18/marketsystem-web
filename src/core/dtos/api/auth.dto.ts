@@ -1,8 +1,12 @@
 // core/dtos/api/auth.dto.ts
 
 export interface LoginRequestDTO {
-  email: string;
+  username: string;
   password: string;
+}
+
+export interface LoginResponseDTO {
+  message?: string;
 }
 
 export interface RegisterRequestDTO {

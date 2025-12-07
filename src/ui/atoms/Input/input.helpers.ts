@@ -27,7 +27,7 @@ export function getInputVariantClasses(
 
   switch (variant) {
     case "default":
-      return ["border bg-white", "border-gray-300", focusBorder, focusRing];
+      return ["border bg-white", "border-gray-500", focusBorder, focusRing];
     case "filled":
       return [
         "border bg-gray-50",

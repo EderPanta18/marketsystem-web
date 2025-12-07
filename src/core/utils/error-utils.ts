@@ -64,7 +64,7 @@ export const isGlobalErrorCode = (code: string): code is ERROR_CODE => {
 };
 
 export const getErrorMessage = (
-  code: ERROR_CODE,
+  code: ERROR_CODE | string,
   defaultMessage?: string
 ): string => {
   return ERROR_MESSAGES[code] || defaultMessage || "Error desconocido";

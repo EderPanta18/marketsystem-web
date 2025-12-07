@@ -4,19 +4,20 @@
 
 import type { ReactNode } from "react";
 import { useSession } from "@/hooks/auth";
+import { Spinner } from "@/ui/atoms";
 
 interface ProtectedLayoutProps {
   children: ReactNode;
 }
 
 export default function ProtectedLayout({ children }: ProtectedLayoutProps) {
-  const { session, status, isAuthenticated, hydrate } = useSession();
+  const { session, isAuthenticated, hydrate, isHydrating } = useSession();
 
   // Loading de sesión (puedes afinar el diseño según tu UI)
-  if (status === "loading") {
+  if (isHydrating) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
-        <p>Cargando sesión...</p>
+      <div className="min-h-screen flex place-content-center">
+        <Spinner size="5xl" label="Cargando sesión..." />
       </div>
     );
   }

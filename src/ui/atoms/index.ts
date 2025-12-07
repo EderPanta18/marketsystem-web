@@ -6,3 +6,4 @@ export { Icon } from "./icon";
 export { Badge } from "./badge";
 export { Switch } from "./switch";
 export { Spinner } from "./spinner";
+export { Image } from "./image";

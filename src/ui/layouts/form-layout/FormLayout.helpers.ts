@@ -6,9 +6,9 @@ import type { FormLayoutVariant } from "./FormLayout.types";
 export function getFormLayoutContainerClasses(variant: FormLayoutVariant) {
   if (variant === "boxed") {
     return cn(
-      "w-full max-w-md mx-auto", // tamaño tipo login
+      "w-full max-w-lg mx-auto", // tamaño tipo login
       "rounded-2xl border border-gray-200 bg-white shadow-lg",
-      "px-6 py-6 sm:px-8 sm:py-8"
+      "px-5 py-5 sm:px-7 sm:py-7"
     );
   }
 

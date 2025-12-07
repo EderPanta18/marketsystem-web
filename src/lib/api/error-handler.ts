@@ -1,7 +1,7 @@
 // lib/api/error-handler.ts
 
 import { AxiosError } from "axios";
-import { ERROR_CODE, ERROR_CODES, ERROR_MESSAGES } from "@/core/constants";
+import { ERROR_CODES } from "@/core/constants";
 import type { ApiErrorResponse } from "@/core/api";
 import { getErrorMessage } from "@/core/utils";
 
@@ -41,7 +41,7 @@ function createGenericError(
   return {
     success: false,
     error: "ApiError",
-    message: getErrorMessage(code as ERROR_CODE),
+    message: getErrorMessage(code),
     statusCode,
     code,
     timestamp: new Date().toISOString(),

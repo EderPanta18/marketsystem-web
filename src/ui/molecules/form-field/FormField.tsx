@@ -50,17 +50,20 @@ export const FormField: React.FC<FormFieldProps> = ({
       <div className={layoutClasses.controlWrapper}>
         {control}
 
-        {(showErrorText || showDescriptionText) && (
-          <p
-            id={descriptionId}
-            className={cn(
-              "text-xs",
-              showErrorText ? "text-red-600" : "text-gray-500"
-            )}
-          >
-            {showErrorText ? error : description}
-          </p>
-        )}
+        {/* Contenedor fijo para mensaje, para que no mueva el layout */}
+        <div className="min-h-4 mt-0.5">
+          {(showErrorText || showDescriptionText) && (
+            <p
+              id={descriptionId}
+              className={cn(
+                "text-xs",
+                showErrorText ? "text-red-600" : "text-gray-500"
+              )}
+            >
+              {showErrorText ? error : description}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

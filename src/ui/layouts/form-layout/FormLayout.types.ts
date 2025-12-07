@@ -1,11 +1,11 @@
 // ui/layouts/form-layout/FormLayout.types.ts
 
-import type { FormHTMLAttributes, ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
 export type FormLayoutVariant = "default" | "boxed";
 
 export interface FormLayoutProps
-  extends Omit<FormHTMLAttributes<HTMLFormElement>, "children"> {
+  extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   headerTitle?: ReactNode;
   headerDescription?: ReactNode;
 

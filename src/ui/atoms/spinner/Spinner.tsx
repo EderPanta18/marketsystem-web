@@ -30,7 +30,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
       role="status"
       aria-live="polite"
       className={cn(
-        "inline-flex flex-col items-center justify-center gap-2",
+        "inline-flex flex-col items-center justify-center gap-4",
         !showLabel && "gap-0",
         className
       )}
