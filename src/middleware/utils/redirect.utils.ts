@@ -1,7 +1,7 @@
 // middleware/utils/redirect.utils.ts
 
 import type { NextRequest } from "next/server";
-import { SYSTEM_ROUTE, SESSION_ERRORS, PUBLIC_ROUTE } from "@/core/constants";
+import { SYSTEM_ROUTE, PUBLIC_ROUTE } from "@/core/constants";
 
 export function loginUrl(req: NextRequest, originalPath: string): URL {
   const url = new URL(PUBLIC_ROUTE.LOGIN, req.url);
@@ -20,5 +20,5 @@ export function systemUrl(req: NextRequest): URL {
 }
 
 export function defaultSessionErrorUrl(req: NextRequest): URL {
-  return statusUrl(req, SESSION_ERRORS.DEFAULT);
+  return statusUrl(req, "UNKNOWN_SESSION_ERROR");
 }
