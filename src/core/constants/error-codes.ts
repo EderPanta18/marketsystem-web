@@ -1,8 +1,5 @@
 // core/constants/error-codes.ts
 
-import { unauthorized } from "next/navigation";
-import { ROLE } from "./roles";
-
 // Errores globales
 export const SYSTEM_ERRORS = {
   INTERNAL_ERROR: "SYS_001",
@@ -51,15 +48,14 @@ export const RESOURCE_ERRORS = {
 export const AUTH_ERRORS = {
   ACCESS_DENIED: "AUTH_001",
   INVALID_CREDENTIALS: "AUTH_002",
-  EMAIL_ALREADY_EXISTS: "AUTH_008", // para login no es
+  EMAIL_ALREADY_EXISTS: "AUTH_003",
 } as const;
 
 export const SESSION_ERRORS = {
-  DEFAULT: "SESS_001",
-  BACKEND_TIMEOUT: "SESS_002",
-  SESSION_EXPIRED: "SESS_003",
-  SESSION_INVALID: "SESS_004",
-  ROLE_MISMATCH: "SESS_005",
+  BACKEND_TIMEOUT: "SESS_001",
+  SESSION_EXPIRED: "SESS_002",
+  SESSION_INVALID: "SESS_003",
+  ROLE_MISMATCH: "SESS_004",
 } as const;
 
 export const MARKET_ERRORS = {
@@ -124,7 +120,7 @@ export const ERROR_MESSAGES: Record<string, string> = {
 
   // Red
   [NETWORK_ERRORS.NETWORK_ERROR]: "Error de conexión de red",
-  [NETWORK_ERRORS.TIMEOUT]: "Tiempo de conexión agotado",
+  [NETWORK_ERRORS.TIMEOUT]: "Tiempo de espera de la red agotado",
   [NETWORK_ERRORS.CONNECTION_FAILED]: "Fallo al conectar con el servidor",
 
   // Validación
@@ -157,7 +153,6 @@ export const ERROR_MESSAGES: Record<string, string> = {
   [AUTH_ERRORS.EMAIL_ALREADY_EXISTS]: "El email ya está registrado",
 
   // Sesión
-  [SESSION_ERRORS.DEFAULT]: "Error de sesión desconocido",
   [SESSION_ERRORS.BACKEND_TIMEOUT]:
     "El sistema está procesando su sesión. Por favor, espere.",
   [SESSION_ERRORS.SESSION_EXPIRED]:

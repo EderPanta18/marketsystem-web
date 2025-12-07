@@ -19,7 +19,7 @@ export class SessionService {
         kind: "unauthenticated",
         isAuthenticated: false,
         user: null,
-        errorCode: error.code as ERROR_CODE,
+        errorCode: error.code,
         errorMessage: error.message,
       };
       return unauth;

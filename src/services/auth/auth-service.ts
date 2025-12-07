@@ -6,6 +6,7 @@ import type {
   LoginRequestDTO,
   RegisterRequestDTO,
   MeResponseDTO,
+  LoginResponseDTO,
 } from "@/core/dtos/api";
 import type { AuthUser } from "@/core/types";
 import { safeApi, type ApiResult } from "@/lib/api";
@@ -29,9 +30,12 @@ function mapMeToAuthUser(me: MeResponseDTO): AuthUser {
 
 export class AuthService {
   // LOGIN
-  static login(payload: LoginRequestDTO): Promise<ApiResult<void>> {
-    return safeApi<void>(async () => {
-      await apiClient.post(API_ENDPOINTS.AUTH.LOGIN, payload);
+  static login(payload: LoginRequestDTO): Promise<ApiResult<LoginResponseDTO>> {
+    return safeApi<LoginResponseDTO>(async () => {
+      return apiClient.post<LoginResponseDTO>(
+        API_ENDPOINTS.AUTH.LOGIN,
+        payload
+      );
     });
   }
 

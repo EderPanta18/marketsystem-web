@@ -32,7 +32,7 @@ export interface ApiErrorResponse {
   statusCode: number;
   timestamp: string;
   path: string;
-  code?: string;
+  code: string;
   details?: string;
   fieldErrors?: Record<string, string[]>;
 }

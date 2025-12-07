@@ -3,7 +3,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { API_CONFIG } from "@/core/config";
 
-const BACKEND_URL = API_CONFIG.BASE_URL;
+const BACKEND_URL = API_CONFIG.REAL_BASE_URL;
 
 const handler = async (req: NextRequest) => {
   try {

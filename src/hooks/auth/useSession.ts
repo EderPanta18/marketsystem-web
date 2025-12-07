@@ -30,6 +30,7 @@ export function useSession() {
     session, // Session discriminada (para errorCode/errorMessage si hace falta)
     user, // UserSession desde el store
     status, // SessionStatus desde el store
+    isHydrating: status === "loading" || status === "idle",
     isAuthenticated: status === "authenticated",
     hydrate,
   };
