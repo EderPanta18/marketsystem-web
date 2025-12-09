@@ -9,6 +9,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   header,
   items,
   footer,
+  children,
   className,
   ...props
 }) => {
@@ -32,10 +33,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside className={cn(getSidebarClassName(), className)} {...props}>
       {header && (
-        <div className="px-2 py-3 border-b border-gray-200 ">{header}</div>
+        <div className="px-2 py-3 border-b border-gray-200">{header}</div>
       )}
 
-      <nav className="flex-1 py-2">{items.map(renderItem)}</nav>
+      <div className="flex-1 py-2">
+        {children
+          ? children
+          : items &&
+            items.length > 0 && (
+              <nav className="space-y-1 px-2">{items.map(renderItem)}</nav>
+            )}
+      </div>
 
       {footer && (
         <div className="border-t border-gray-200 px-2 py-3">{footer}</div>

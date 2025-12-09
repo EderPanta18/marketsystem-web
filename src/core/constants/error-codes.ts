@@ -52,10 +52,9 @@ export const AUTH_ERRORS = {
 } as const;
 
 export const SESSION_ERRORS = {
-  BACKEND_TIMEOUT: "SESS_001",
-  SESSION_EXPIRED: "SESS_002",
-  SESSION_INVALID: "SESS_003",
-  ROLE_MISMATCH: "SESS_004",
+  SESSION_EXPIRED: "SESS_001",
+  SESSION_INVALID: "SESS_002",
+  ROLE_MISMATCH: "SESS_003",
 } as const;
 
 export const MARKET_ERRORS = {
@@ -152,9 +151,6 @@ export const ERROR_MESSAGES: Record<string, string> = {
   [AUTH_ERRORS.ACCESS_DENIED]: "Acceso denegado",
   [AUTH_ERRORS.EMAIL_ALREADY_EXISTS]: "El email ya está registrado",
 
-  // Sesión
-  [SESSION_ERRORS.BACKEND_TIMEOUT]:
-    "El sistema está procesando su sesión. Por favor, espere.",
   [SESSION_ERRORS.SESSION_EXPIRED]:
     "Su sesión ha expirado. Por favor, inicie sesión nuevamente.",
   [SESSION_ERRORS.SESSION_INVALID]:

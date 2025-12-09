@@ -10,6 +10,7 @@ interface AuthState {
   // acciones controladas
   setUser: (user: UserSession) => void;
   setLoading: () => void;
+  setLoggingOut: () => void;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -23,4 +24,5 @@ export const useAuthStore = create<AuthState>((set) => ({
       user,
       status: user ? "authenticated" : "unauthenticated",
     }),
+  setLoggingOut: () => set({ status: "loggingOut" }),
 }));

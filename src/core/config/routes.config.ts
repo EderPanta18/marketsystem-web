@@ -31,11 +31,11 @@ export const ROUTE: RouteConfig[] = [
     requiredRoles: [ROLE.COORDINATOR],
   },
   {
-    path: SYSTEM_ROUTE.REPORTES,
+    path: SYSTEM_ROUTE.REPORTS,
     requiredRoles: [ROLE.MANAGER, ROLE.COORDINATOR],
   },
   {
-    path: SYSTEM_ROUTE.TARIFAS,
+    path: SYSTEM_ROUTE.FEES,
     requiredRoles: [ROLE.MANAGER, ROLE.SUPERVISOR, ROLE.COORDINATOR],
   },
   {

@@ -23,6 +23,7 @@ export type SessionStatus =
   | "idle" // aún no se intentó hidratar
   | "loading" // se está llamando
   | "authenticated" // hay usuario válido en memoria
-  | "unauthenticated"; // se sabe que no hay sesión válida
+  | "unauthenticated" // se sabe que no hay sesión válida
+  | "loggingOut"; // se está cerrando sesión
 
 export type UserSession = AuthUser | null;
