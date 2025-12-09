@@ -22,7 +22,7 @@ export async function decideMiddleware(
   const isSystem = isSystemPath(pathname);
 
   if (isPublic) {
-    return guardPublicRoute(req, pathname);
+    return guardPublicRoute(req);
   }
 
   if (isProtected || isSystem) {
