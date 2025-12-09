@@ -32,16 +32,24 @@ export const Button: React.FC<ButtonProps> = ({
     variant as ButtonStyleVariant
   );
 
+  const interactiveClasses =
+    variant === "solid" ? "shadow-sm hover:shadow-lg hover:brightness-110" : "";
+
+  const disabledClasses =
+    disabled && !loading ? "opacity-60 cursor-not-allowed" : "";
+
+  const loadingClasses = loading ? "cursor-wait opacity-80" : "";
+
   return (
     <button
       className={cn(
         buttonBaseClasses,
         sizeClasses,
         colorClasses,
-        variant === "solid" && "shadow-sm hover:shadow-md",
+        !isDisabled && interactiveClasses,
         fullWidth && "w-full",
-        isDisabled && "opacity-60",
-        loading && ["cursor-wait", "hover:shadow-sm hover:brightness-100"],
+        disabledClasses,
+        loadingClasses,
         className
       )}
       disabled={isDisabled}

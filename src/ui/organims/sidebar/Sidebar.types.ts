@@ -11,9 +11,8 @@ export interface SidebarNavItem {
   disabled?: boolean;
 }
 
-export interface SidebarProps
-  extends Omit<HTMLAttributes<HTMLElement>, "children"> {
-  header?: ReactNode; // logo + título, por ejemplo
-  items: SidebarNavItem[];
-  footer?: ReactNode; // usuario, acciones, etc.
+export interface SidebarProps extends HTMLAttributes<HTMLElement> {
+  header?: ReactNode;
+  items?: SidebarNavItem[]; // ahora opcional
+  footer?: ReactNode;
 }

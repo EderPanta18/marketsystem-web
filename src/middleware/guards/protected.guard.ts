@@ -3,6 +3,7 @@
 import type { NextRequest } from "next/server";
 import { ROUTE } from "@/core/config";
 import { ROLE } from "@/core/constants";
+import { normalizePath } from "@/core/utils";
 import type { MiddlewareDecision } from "../types";
 import { getTokenStatus } from "../utils/token.utils";
 import {
@@ -10,7 +11,6 @@ import {
   handleRoleMismatch,
   handleUnexpectedSession,
 } from "../handlers/session.handler";
-import { normalizePath } from "@/core/utils";
 
 /**
  * Verifica si el rol del usuario puede acceder a la ruta,

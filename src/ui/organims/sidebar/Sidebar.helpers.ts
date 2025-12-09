@@ -12,8 +12,10 @@ export function getSidebarClassName(extra?: string) {
 
 export function getSidebarItemClasses(item: SidebarNavItem): string {
   return cn(
-    "bg-transparent border-none rounded-none px-6 py-3 text-base font-medium transition-colors",
-    item.active ? "bg-sky-200 text-gray-900" : "text-gray-800 hover:bg-sky-100",
+    "bg-transparent px-6 py-3 text-base font-medium transition-colors",
+    item.active
+      ? "bg-gray-300 text-gray-900"
+      : "text-gray-800 hover:bg-gray-200",
     item.disabled && "opacity-50 cursor-not-allowed pointer-events-none"
   );
 }
