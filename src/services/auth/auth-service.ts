@@ -57,7 +57,7 @@ export class AuthService {
   // LOGOUT
   static logout(): Promise<ApiResult<void>> {
     return safeApi<void>(async () => {
-      await apiClient.post(API_ENDPOINTS.AUTH.LOGOUT);
+      await apiClient.delete(API_ENDPOINTS.AUTH.LOGOUT);
     });
   }
 

@@ -7,6 +7,7 @@ D:.
 +---app
 ¦   ¦   globals.css
 ¦   ¦   layout.tsx
+¦   ¦   not-found.tsx
 ¦   ¦   
 ¦   +---(protected)
 ¦   ¦   ¦   layout.tsx
@@ -15,6 +16,12 @@ D:.
 ¦   ¦       ¦   layout.tsx
 ¦   ¦       ¦   page.tsx
 ¦   ¦       ¦   
+¦   ¦       +---estado
+¦   ¦       ¦       page.tsx
+¦   ¦       ¦       
+¦   ¦       +---mercados
+¦   ¦       ¦       page.tsx
+¦   ¦       ¦       
 ¦   ¦       +---panel
 ¦   ¦       ¦       page.tsx
 ¦   ¦       ¦       
@@ -24,6 +31,7 @@ D:.
 ¦   ¦   ¦   page.tsx
 ¦   ¦   ¦   
 ¦   ¦   +---login
+¦   ¦           not-found.tsx
 ¦   ¦           page.tsx
 ¦   ¦           
 ¦   +---api
@@ -122,18 +130,20 @@ D:.
 ¦           
 +---modules
 ¦   +---auth
+¦       ¦   index.ts
+¦       ¦   
 ¦       +---components
 ¦       ¦       index.ts
 ¦       ¦       LoginForm.tsx
 ¦       ¦       
 ¦       +---hooks
+¦       ¦       index.ts
 ¦       ¦       useLogin.ts
 ¦       ¦       
 ¦       +---schemas
-¦       ¦       index.ts
-¦       ¦       login.schema.ts
-¦       ¦       
-¦       +---utils
+¦               index.ts
+¦               login.schema.ts
+¦               
 +---providers
 +---services
 ¦   +---auth
@@ -203,6 +213,8 @@ D:.
 ¦   ¦           Switch.types.ts
 ¦   ¦           
 ¦   +---feedback
+¦   ¦   ¦   index.ts
+¦   ¦   ¦   
 ¦   ¦   +---skeleton
 ¦   ¦           index.ts
 ¦   ¦           Skeleton.helpers.ts
@@ -263,12 +275,10 @@ D:.
 ¦   ¦           Modal.types.ts
 ¦   ¦           
 ¦   +---pending
-¦   ¦   +---pagination
 ¦   +---tokens
 ¦           color-helpers.ts
 ¦           color-tokens.ts
 ¦           color-utils.ts
 ¦           index.ts
-¦           size-tokens.ts
 ¦           
 +---widgets

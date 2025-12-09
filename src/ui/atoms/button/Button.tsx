@@ -1,6 +1,5 @@
 // ui/atoms/button/Button.tsx
 
-import React from "react";
 import { cn } from "@/shared/utils";
 import type {
   ButtonProps,
@@ -42,11 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
         variant === "solid" && "shadow-sm hover:shadow-md",
         fullWidth && "w-full",
         isDisabled && "opacity-60",
-        loading && [
-          "cursor-wait",
-          // desactivar efectos de hover mientras carga
-          "hover:shadow-sm hover:brightness-100",
-        ],
+        loading && ["cursor-wait", "hover:shadow-sm hover:brightness-100"],
         className
       )}
       disabled={isDisabled}

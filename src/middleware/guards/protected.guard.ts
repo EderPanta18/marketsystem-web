@@ -10,13 +10,16 @@ import {
   handleRoleMismatch,
   handleUnexpectedSession,
 } from "../handlers/session.handler";
+import { normalizePath } from "@/core/utils";
 
 /**
  * Verifica si el rol del usuario puede acceder a la ruta,
  * usando la config central de ROUTE.
  */
 function canAccessRoute(pathname: string, userRole?: ROLE): boolean {
-  const route = ROUTE.find((r) => r.path === pathname);
+  const normalized = normalizePath(pathname);
+
+  const route = ROUTE.find((r) => r.path === normalized);
 
   if (!route) return true;
   if (route.public) return true;
