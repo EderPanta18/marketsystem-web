@@ -1,3 +1,5 @@
+// lib/api/api.ts
+
 import { AxiosRequestConfig } from "axios";
 import {
   API_ENDPOINTS,

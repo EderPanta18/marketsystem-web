@@ -1,6 +1,5 @@
 // ui/feedback/skeleton/Skeleton.tsx
 
-import React from "react";
 import { cn } from "@/shared/utils";
 import type { SkeletonProps, SkeletonVariant } from "./Skeleton.types";
 import { getSkeletonBaseClasses, parseSize } from "./Skeleton.helpers";

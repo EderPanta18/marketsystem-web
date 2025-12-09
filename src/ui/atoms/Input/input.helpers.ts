@@ -1,4 +1,4 @@
-// ui/atoms/input/input.helper.ts
+// ui/atoms/input/input.helpers.ts
 
 import type { UIColorScheme } from "@/core/types";
 import { COLOR_TOKENS } from "@/ui/tokens";

@@ -1,6 +1,5 @@
 // ui/molecules/dataTable/DataTable.tsx
 
-import React from "react";
 import { cn } from "@/shared/utils";
 import { Spinner } from "@/ui/atoms";
 import type { DataTableProps } from "./DataTable.types";

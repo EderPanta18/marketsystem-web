@@ -1,6 +1,5 @@
 // ui/molecules/card/Card.tsx
 
-import * as React from "react";
 import { cn } from "@/shared/utils";
 import type { CardProps } from "./Card.types";
 import { getCardStyleTokens } from "./Card.helpers";

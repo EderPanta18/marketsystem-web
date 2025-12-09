@@ -1,6 +1,5 @@
 // ui/molecules/iconButton/IconButton.tsx
 
-import React from "react";
 import { cn } from "@/shared/utils";
 import type { IconName } from "@/ui/atoms/icon";
 import { Button, Icon } from "@/ui/atoms";

@@ -1,8 +1,10 @@
 // hooks/auth/useSession.ts
 
+"use client";
+
 import { useEffect, useState, useCallback } from "react";
 import type { Session } from "@/core/types";
-import { SessionService } from "@/services/auth";
+import { AuthService, SessionService } from "@/services/auth";
 import { useAuthStore } from "@/stores";
 
 export function useSession() {
@@ -17,6 +19,7 @@ export function useSession() {
 
     if (s.kind === "authenticated") {
       setUser(s.user); // status pasa a 'authenticated'
+      await AuthService.refresh();
     } else {
       setUser(null); // status pasa a 'unauthenticated'
     }

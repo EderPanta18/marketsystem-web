@@ -1,6 +1,5 @@
 // ui/atoms/Badge/Badge.tsx
 
-import React from "react";
 import { cn } from "@/shared/utils";
 import type {
   BadgeProps,

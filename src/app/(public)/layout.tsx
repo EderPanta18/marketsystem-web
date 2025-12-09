@@ -2,10 +2,11 @@
 
 import { BackgroundLayout } from "@/ui/layouts";
 import { Image } from "@/ui/atoms";
+import { APP_IMAGES } from "@/core/config";
 
 const backgroundImgSrc = "/assets/images/public-bg.png";
 const genericMarketImgSrc = "/assets/images/generic-market.png";
-const muniLogoImgSrc = "/assets/images/muni-logo.png";
+const muniLogo = APP_IMAGES.muniLogo;
 
 export default function PublicLayout({
   children,
@@ -25,7 +26,7 @@ export default function PublicLayout({
               fit="contain"
             />
           </div>
-          <div className="text-2xl font-extrabold text-white text-left drop-shadow-[0_0_4px_rgba(0,0,0,0.9)]">
+          <div className="text-xl md:text-2xl font-extrabold text-white text-left drop-shadow-[0_0_4px_rgba(0,0,0,0.9)]">
             <p>Sistema de Control</p>
             <p>de Mercados</p>
           </div>
@@ -38,14 +39,14 @@ export default function PublicLayout({
         <div className="flex items-center gap-3">
           <div className="relative">
             <Image
-              src={muniLogoImgSrc}
-              alt="Municipalidad Distrital de Veintiséis de Octubre"
+              src={muniLogo.src}
+              alt={muniLogo.alt}
               width={72}
               height={72}
               fit="contain"
             />
           </div>
-          <div className="text-2xl font-extrabold text-white text-left drop-shadow-[0_0_4px_rgba(0,0,0,0.9)]">
+          <div className="text-xl md:text-2xl font-extrabold text-white text-left drop-shadow-[0_0_4px_rgba(0,0,0,0.9)]">
             <p>Municipalidad Distrital de</p>
             <p>Veintiséis de Octubre</p>
           </div>
