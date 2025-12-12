@@ -37,7 +37,8 @@ export type IconName =
   | "users"
   | "settings"
   | "log-out"
-  | "menu";
+  | "menu"
+  | "clean";
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;

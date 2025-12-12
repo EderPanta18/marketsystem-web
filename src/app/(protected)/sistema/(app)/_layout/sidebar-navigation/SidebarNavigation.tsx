@@ -4,7 +4,7 @@
 import React from "react";
 import { cn } from "@/shared/utils";
 import { IconButton } from "@/ui/molecules";
-import { Sidebar } from "@/ui/organims";
+import { Sidebar } from "@/ui/organisms";
 import { useOutsideClick } from "@/shared/hooks";
 import { SidebarMainNav } from "./SidebarMainNav";
 import { SidebarFooter, SidebarHeader } from "./components";
@@ -32,7 +32,7 @@ export const SidebarNavigation: React.FC = () => {
       <div className="hidden lg:block">{sidebarContent}</div>
 
       {/* Top bar fijo SOLO en mobile (botón menú) */}
-      <div className="fixed inset-x-0 top-0 z-40 flex items-center justify-end bg-white px-4 py-2 shadow-sm lg:hidden">
+      <div className="fixed inset-x-0 top-0 z-40 flex items-center justify-end bg-white px-4 py-2 border-b-2 border-gray-300 shadow-sm lg:hidden">
         <IconButton
           icon="menu"
           aria-label="Abrir menú"

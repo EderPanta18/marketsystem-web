@@ -10,7 +10,7 @@ import { useAuthStore } from "@/stores";
 
 export function useLogout() {
   const router = useRouter();
-  const { setLoggingOut } = useAuthStore();
+  const { setLoggingOut, setUser } = useAuthStore();
   const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 

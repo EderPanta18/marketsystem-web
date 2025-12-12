@@ -3,7 +3,7 @@
 import React from "react";
 import { cn } from "@/shared/utils";
 import type { InputProps, InputSize, InputVariant } from "./Input.types";
-import { getInputSizeClasses, getInputVariantClasses } from "./input.helpers";
+import { getInputSizeClasses, getInputVariantClasses } from "./Input.helpers";
 
 export const Input: React.FC<InputProps> = ({
   fullWidth = false,
@@ -41,7 +41,7 @@ export const Input: React.FC<InputProps> = ({
         className={cn(
           "w-full rounded-md outline-none transition-all duration-150",
           "placeholder:text-gray-400",
-          "disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed",
+          "disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed ",
           sizeClasses,
           variantClasses,
           hasLeftIcon && "pl-9",
@@ -53,7 +53,7 @@ export const Input: React.FC<InputProps> = ({
       />
 
       {hasRightIcon && (
-        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+        <span className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
           {rightIcon}
         </span>
       )}

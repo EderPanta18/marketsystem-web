@@ -7,11 +7,7 @@ import type {
   ButtonColorScheme,
   ButtonStyleVariant,
 } from "./Button.types";
-import {
-  buttonBaseClasses,
-  getButtonSizeClasses,
-  getButtonColorClasses,
-} from "./Button.helpers";
+import { getButtonSizeClasses, getButtonColorClasses } from "./Button.helpers";
 
 export const Button: React.FC<ButtonProps> = ({
   children,
@@ -32,31 +28,44 @@ export const Button: React.FC<ButtonProps> = ({
     variant as ButtonStyleVariant
   );
 
+  // interacciones solo si está activo y no cargando
   const interactiveClasses =
-    variant === "solid" ? "shadow-sm hover:shadow-lg hover:brightness-110" : "";
+    !isDisabled && variant === "solid"
+      ? "shadow-sm hover:shadow-lg hover:brightness-110"
+      : "";
 
+  // cursor solo en estado normal
+  const cursorClasses = !isDisabled ? "cursor-pointer" : "cursor-not-allowed";
+
+  // loading → mantiene colores pero se atenúa
+  const loadingClasses = loading
+    ? "opacity-80 pointer-events-none cursor-wait"
+    : "";
+
+  // disabled puro → sin colores, neutro
   const disabledClasses =
-    disabled && !loading ? "opacity-60 cursor-not-allowed" : "";
-
-  const loadingClasses = loading ? "cursor-wait opacity-80" : "";
+    disabled && !loading
+      ? "opacity-50 cursor-not-allowed bg-gray-300 text-gray-900 border-gray-500"
+      : "";
 
   return (
     <button
       className={cn(
-        buttonBaseClasses,
+        "inline-flex items-center justify-center font-medium rounded-lg border transition-all duration-200 ease-out",
         sizeClasses,
-        colorClasses,
-        !isDisabled && interactiveClasses,
+        !disabled && colorClasses, // disabled puro no usa esquema
+        interactiveClasses,
+        cursorClasses,
         fullWidth && "w-full",
-        disabledClasses,
         loadingClasses,
+        disabledClasses,
         className
       )}
       disabled={isDisabled}
       {...props}
     >
       {loading && (
-        <span className="mr-2 inline-flex h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+        <span className="mr-2 inline-flex h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-current text-current" />
       )}
       <span className="inline-flex items-center gap-1">{children}</span>
     </button>
