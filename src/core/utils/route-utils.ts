@@ -33,3 +33,8 @@ export const isSystemPath = (path: string): boolean => {
 export const isPath = (path: string): boolean => {
   return isPublicPath(path) || isProtectedPath(path);
 };
+
+export function normalizePath(pathname: string): string {
+  const [path] = pathname.split("?");
+  return path !== "/" && path.endsWith("/") ? path.slice(0, -1) : path;
+}

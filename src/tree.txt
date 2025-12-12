@@ -1,274 +1,285 @@
 Listado de rutas de carpetas para el volumen Data
-El número de serie del volumen es E885-FE15
+El nï¿½mero de serie del volumen es E885-FE15 
+Version 2.32
 D:.
-¦   proxy.ts
-¦   tree.txt
-¦   
+ï¿½   proxy.ts
+ï¿½   tree.txt
+ï¿½   
 +---app
-¦   ¦   globals.css
-¦   ¦   layout.tsx
-¦   ¦   
-¦   +---(protected)
-¦   ¦   ¦   layout.tsx
-¦   ¦   ¦   
-¦   ¦   +---sistema
-¦   ¦       ¦   layout.tsx
-¦   ¦       ¦   page.tsx
-¦   ¦       ¦   
-¦   ¦       +---panel
-¦   ¦       ¦       page.tsx
-¦   ¦       ¦       
-¦   ¦       +---usuarios
-¦   +---(public)
-¦   ¦   ¦   layout.tsx
-¦   ¦   ¦   page.tsx
-¦   ¦   ¦   
-¦   ¦   +---login
-¦   ¦           page.tsx
-¦   ¦           
-¦   +---api
-¦       +---backend
-¦           +---[...path]
-¦                   route.ts
-¦                   
+ï¿½   ï¿½   globals.css
+ï¿½   ï¿½   layout.tsx
+ï¿½   ï¿½   not-found.tsx
+ï¿½   ï¿½   
+ï¿½   +---(protected)
+ï¿½   ï¿½   ï¿½   layout.tsx
+ï¿½   ï¿½   ï¿½   
+ï¿½   ï¿½   +---sistema
+ï¿½   ï¿½       ï¿½   layout.tsx
+ï¿½   ï¿½       ï¿½   page.tsx
+ï¿½   ï¿½       ï¿½   
+ï¿½   ï¿½       +---estado
+ï¿½   ï¿½       ï¿½       page.tsx
+ï¿½   ï¿½       ï¿½       
+ï¿½   ï¿½       +---mercados
+ï¿½   ï¿½       ï¿½       page.tsx
+ï¿½   ï¿½       ï¿½       
+ï¿½   ï¿½       +---panel
+ï¿½   ï¿½       ï¿½       page.tsx
+ï¿½   ï¿½       ï¿½       
+ï¿½   ï¿½       +---usuarios
+ï¿½   +---(public)
+ï¿½   ï¿½   ï¿½   layout.tsx
+ï¿½   ï¿½   ï¿½   page.tsx
+ï¿½   ï¿½   ï¿½   
+ï¿½   ï¿½   +---login
+ï¿½   ï¿½           not-found.tsx
+ï¿½   ï¿½           page.tsx
+ï¿½   ï¿½           
+ï¿½   +---api
+ï¿½       +---backend
+ï¿½           +---[...path]
+ï¿½                   route.ts
+ï¿½                   
 +---core
-¦   +---api
-¦   ¦       api.types.ts
-¦   ¦       endpoints.factory.ts
-¦   ¦       endpoints.ts
-¦   ¦       index.ts
-¦   ¦       
-¦   +---config
-¦   ¦       api.config.ts
-¦   ¦       app.config.ts
-¦   ¦       environment.ts
-¦   ¦       index.ts
-¦   ¦       routes.config.ts
-¦   ¦       security.config.ts
-¦   ¦       
-¦   +---constants
-¦   ¦       error-codes.ts
-¦   ¦       index.ts
-¦   ¦       permissions.ts
-¦   ¦       role-permissions.ts
-¦   ¦       roles.ts
-¦   ¦       routes.ts
-¦   ¦       
-¦   +---dtos
-¦   ¦   +---api
-¦   ¦           auth.dto.ts
-¦   ¦           index.ts
-¦   ¦           
-¦   +---types
-¦   ¦       auth.types.ts
-¦   ¦       index.ts
-¦   ¦       session.types.ts
-¦   ¦       ui.types.ts
-¦   ¦       
-¦   +---utils
-¦           error-utils.ts
-¦           index.ts
-¦           permission-utils.ts
-¦           role-utils.ts
-¦           route-utils.ts
-¦           
+ï¿½   +---api
+ï¿½   ï¿½       api.types.ts
+ï¿½   ï¿½       endpoints.factory.ts
+ï¿½   ï¿½       endpoints.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       
+ï¿½   +---config
+ï¿½   ï¿½       api.config.ts
+ï¿½   ï¿½       app.config.ts
+ï¿½   ï¿½       environment.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       routes.config.ts
+ï¿½   ï¿½       security.config.ts
+ï¿½   ï¿½       
+ï¿½   +---constants
+ï¿½   ï¿½       error-codes.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       permissions.ts
+ï¿½   ï¿½       role-permissions.ts
+ï¿½   ï¿½       roles.ts
+ï¿½   ï¿½       routes.ts
+ï¿½   ï¿½       
+ï¿½   +---dtos
+ï¿½   ï¿½   +---api
+ï¿½   ï¿½           auth.dto.ts
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           
+ï¿½   +---types
+ï¿½   ï¿½       auth.types.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       session.types.ts
+ï¿½   ï¿½       ui.types.ts
+ï¿½   ï¿½       
+ï¿½   +---utils
+ï¿½           error-utils.ts
+ï¿½           index.ts
+ï¿½           permission-utils.ts
+ï¿½           role-utils.ts
+ï¿½           route-utils.ts
+ï¿½           
 +---hooks
-¦   +---auth
-¦           index.ts
-¦           useAuth.ts
-¦           usePermissions.ts
-¦           useSession.ts
-¦           useUserProfile.ts
-¦           
+ï¿½   +---auth
+ï¿½           index.ts
+ï¿½           useAuth.ts
+ï¿½           usePermissions.ts
+ï¿½           useSession.ts
+ï¿½           useUserProfile.ts
+ï¿½           
 +---lib
-¦   +---api
-¦   ¦       api.client.ts
-¦   ¦       api.interceptor.ts
-¦   ¦       api.ts
-¦   ¦       error-handler.ts
-¦   ¦       index.ts
-¦   ¦       request-builder.ts
-¦   ¦       safe-api.ts
-¦   ¦       
-¦   +---crypto
-¦   ¦       encryption.ts
-¦   ¦       hashing.ts
-¦   ¦       index.ts
-¦   ¦       jwt.ts
-¦   ¦       security-utils.ts
-¦   ¦       
-¦   +---utils
-¦           array-utils.ts
-¦           date-utils.ts
-¦           index.ts
-¦           number-utils.ts
-¦           object-utils.ts
-¦           string-utils.ts
-¦           
+ï¿½   +---api
+ï¿½   ï¿½       api.client.ts
+ï¿½   ï¿½       api.interceptor.ts
+ï¿½   ï¿½       api.ts
+ï¿½   ï¿½       error-handler.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       request-builder.ts
+ï¿½   ï¿½       safe-api.ts
+ï¿½   ï¿½       
+ï¿½   +---crypto
+ï¿½   ï¿½       encryption.ts
+ï¿½   ï¿½       hashing.ts
+ï¿½   ï¿½       index.ts
+ï¿½   ï¿½       jwt.ts
+ï¿½   ï¿½       security-utils.ts
+ï¿½   ï¿½       
+ï¿½   +---utils
+ï¿½           array-utils.ts
+ï¿½           date-utils.ts
+ï¿½           index.ts
+ï¿½           number-utils.ts
+ï¿½           object-utils.ts
+ï¿½           string-utils.ts
+ï¿½           
 +---middleware
-¦   ¦   flow.ts
-¦   ¦   types.ts
-¦   ¦   
-¦   +---guards
-¦   ¦       protected.guard.ts
-¦   ¦       public.guard.ts
-¦   ¦       
-¦   +---handlers
-¦   ¦       session.handler.ts
-¦   ¦       
-¦   +---utils
-¦           redirect.utils.ts
-¦           token.utils.ts
-¦           
+ï¿½   ï¿½   flow.ts
+ï¿½   ï¿½   types.ts
+ï¿½   ï¿½   
+ï¿½   +---guards
+ï¿½   ï¿½       protected.guard.ts
+ï¿½   ï¿½       public.guard.ts
+ï¿½   ï¿½       
+ï¿½   +---handlers
+ï¿½   ï¿½       session.handler.ts
+ï¿½   ï¿½       
+ï¿½   +---utils
+ï¿½           redirect.utils.ts
+ï¿½           token.utils.ts
+ï¿½           
 +---modules
-¦   +---auth
-¦       +---components
-¦       ¦       index.ts
-¦       ¦       LoginForm.tsx
-¦       ¦       
-¦       +---hooks
-¦       ¦       useLogin.ts
-¦       ¦       
-¦       +---schemas
-¦       ¦       index.ts
-¦       ¦       login.schema.ts
-¦       ¦       
-¦       +---utils
+ï¿½   +---auth
+ï¿½       ï¿½   index.ts
+ï¿½       ï¿½   
+ï¿½       +---components
+ï¿½       ï¿½       index.ts
+ï¿½       ï¿½       LoginForm.tsx
+ï¿½       ï¿½       
+ï¿½       +---hooks
+ï¿½       ï¿½       index.ts
+ï¿½       ï¿½       useLogin.ts
+ï¿½       ï¿½       
+ï¿½       +---schemas
+ï¿½               index.ts
+ï¿½               login.schema.ts
+ï¿½               
 +---providers
 +---services
-¦   +---auth
-¦           auth-service.ts
-¦           index.ts
-¦           session-service.ts
-¦           
+ï¿½   +---auth
+ï¿½           auth-service.ts
+ï¿½           index.ts
+ï¿½           session-service.ts
+ï¿½           
 +---shared
-¦   +---components
-¦   ¦   +---forms
-¦   ¦           Form.tsx
-¦   ¦           index.ts
-¦   ¦           
-¦   +---utils
-¦           classnames.ts
-¦           index.ts
-¦           
+ï¿½   +---components
+ï¿½   ï¿½   +---forms
+ï¿½   ï¿½           Form.tsx
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           
+ï¿½   +---utils
+ï¿½           classnames.ts
+ï¿½           index.ts
+ï¿½           
 +---stores
-¦       auth.store.ts
-¦       index.ts
-¦       
+ï¿½       auth.store.ts
+ï¿½       index.ts
+ï¿½       
 +---ui
-¦   +---atoms
-¦   ¦   ¦   index.ts
-¦   ¦   ¦   
-¦   ¦   +---badge
-¦   ¦   ¦       Badge.helpers.ts
-¦   ¦   ¦       Badge.tsx
-¦   ¦   ¦       Badge.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---button
-¦   ¦   ¦       Button.helpers.ts
-¦   ¦   ¦       Button.tsx
-¦   ¦   ¦       Button.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---icon
-¦   ¦   ¦       Icon.helpers.ts
-¦   ¦   ¦       Icon.tsx
-¦   ¦   ¦       Icon.types.ts
-¦   ¦   ¦       icons-map.tsx
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---image
-¦   ¦   ¦       Image.helpers.ts
-¦   ¦   ¦       Image.tsx
-¦   ¦   ¦       Image.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---Input
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       input.helpers.ts
-¦   ¦   ¦       Input.tsx
-¦   ¦   ¦       Input.types.ts
-¦   ¦   ¦       
-¦   ¦   +---spinner
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       Spinner.helpers.tsx
-¦   ¦   ¦       Spinner.tsx
-¦   ¦   ¦       Spinner.types.ts
-¦   ¦   ¦       
-¦   ¦   +---switch
-¦   ¦           index.ts
-¦   ¦           Switch.helpers.ts
-¦   ¦           Switch.tsx
-¦   ¦           Switch.types.ts
-¦   ¦           
-¦   +---feedback
-¦   ¦   +---skeleton
-¦   ¦           index.ts
-¦   ¦           Skeleton.helpers.ts
-¦   ¦           Skeleton.tsx
-¦   ¦           Skeleton.types.ts
-¦   ¦           
-¦   +---layouts
-¦   ¦   ¦   index.ts
-¦   ¦   ¦   
-¦   ¦   +---background-layout
-¦   ¦   ¦       BackgroundLayout.helpers.ts
-¦   ¦   ¦       BackgroundLayout.tsx
-¦   ¦   ¦       BackgroundLayout.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---form-layout
-¦   ¦           FormLayout.helpers.ts
-¦   ¦           FormLayout.tsx
-¦   ¦           FormLayout.types.ts
-¦   ¦           index.ts
-¦   ¦           
-¦   +---molecules
-¦   ¦   ¦   index.ts
-¦   ¦   ¦   
-¦   ¦   +---card
-¦   ¦   ¦       Card.helpers.ts
-¦   ¦   ¦       Card.tsx
-¦   ¦   ¦       Card.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---data-table
-¦   ¦   ¦       DataTable.helpers.ts
-¦   ¦   ¦       DataTable.tsx
-¦   ¦   ¦       DataTable.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---form-field
-¦   ¦   ¦       FormField.helpers.ts
-¦   ¦   ¦       FormField.tsx
-¦   ¦   ¦       FormField.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---icon-button
-¦   ¦           IconButton.tsx
-¦   ¦           IconButton.types.ts
-¦   ¦           index.ts
-¦   ¦           
-¦   +---organims
-¦   ¦   +---alert
-¦   ¦   ¦       Alert.tsx
-¦   ¦   ¦       Alert.types.ts
-¦   ¦   ¦       index.ts
-¦   ¦   ¦       
-¦   ¦   +---modal
-¦   ¦           index.ts
-¦   ¦           Modal.helper.ts
-¦   ¦           Modal.tsx
-¦   ¦           Modal.types.ts
-¦   ¦           
-¦   +---pending
-¦   ¦   +---pagination
-¦   +---tokens
-¦           color-helpers.ts
-¦           color-tokens.ts
-¦           color-utils.ts
-¦           index.ts
-¦           size-tokens.ts
-¦           
+ï¿½   +---atoms
+ï¿½   ï¿½   ï¿½   index.ts
+ï¿½   ï¿½   ï¿½   
+ï¿½   ï¿½   +---badge
+ï¿½   ï¿½   ï¿½       Badge.helpers.ts
+ï¿½   ï¿½   ï¿½       Badge.tsx
+ï¿½   ï¿½   ï¿½       Badge.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---button
+ï¿½   ï¿½   ï¿½       Button.helpers.ts
+ï¿½   ï¿½   ï¿½       Button.tsx
+ï¿½   ï¿½   ï¿½       Button.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---icon
+ï¿½   ï¿½   ï¿½       Icon.helpers.ts
+ï¿½   ï¿½   ï¿½       Icon.tsx
+ï¿½   ï¿½   ï¿½       Icon.types.ts
+ï¿½   ï¿½   ï¿½       icons-map.tsx
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---image
+ï¿½   ï¿½   ï¿½       Image.helpers.ts
+ï¿½   ï¿½   ï¿½       Image.tsx
+ï¿½   ï¿½   ï¿½       Image.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---Input
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       input.helpers.ts
+ï¿½   ï¿½   ï¿½       Input.tsx
+ï¿½   ï¿½   ï¿½       Input.types.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---spinner
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       Spinner.helpers.tsx
+ï¿½   ï¿½   ï¿½       Spinner.tsx
+ï¿½   ï¿½   ï¿½       Spinner.types.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---switch
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           Switch.helpers.ts
+ï¿½   ï¿½           Switch.tsx
+ï¿½   ï¿½           Switch.types.ts
+ï¿½   ï¿½           
+ï¿½   +---feedback
+ï¿½   ï¿½   ï¿½   index.ts
+ï¿½   ï¿½   ï¿½   
+ï¿½   ï¿½   +---skeleton
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           Skeleton.helpers.ts
+ï¿½   ï¿½           Skeleton.tsx
+ï¿½   ï¿½           Skeleton.types.ts
+ï¿½   ï¿½           
+ï¿½   +---layouts
+ï¿½   ï¿½   ï¿½   index.ts
+ï¿½   ï¿½   ï¿½   
+ï¿½   ï¿½   +---background-layout
+ï¿½   ï¿½   ï¿½       BackgroundLayout.helpers.ts
+ï¿½   ï¿½   ï¿½       BackgroundLayout.tsx
+ï¿½   ï¿½   ï¿½       BackgroundLayout.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---form-layout
+ï¿½   ï¿½           FormLayout.helpers.ts
+ï¿½   ï¿½           FormLayout.tsx
+ï¿½   ï¿½           FormLayout.types.ts
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           
+ï¿½   +---molecules
+ï¿½   ï¿½   ï¿½   index.ts
+ï¿½   ï¿½   ï¿½   
+ï¿½   ï¿½   +---card
+ï¿½   ï¿½   ï¿½       Card.helpers.ts
+ï¿½   ï¿½   ï¿½       Card.tsx
+ï¿½   ï¿½   ï¿½       Card.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---data-table
+ï¿½   ï¿½   ï¿½       DataTable.helpers.ts
+ï¿½   ï¿½   ï¿½       DataTable.tsx
+ï¿½   ï¿½   ï¿½       DataTable.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---form-field
+ï¿½   ï¿½   ï¿½       FormField.helpers.ts
+ï¿½   ï¿½   ï¿½       FormField.tsx
+ï¿½   ï¿½   ï¿½       FormField.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---icon-button
+ï¿½   ï¿½           IconButton.tsx
+ï¿½   ï¿½           IconButton.types.ts
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           
+ï¿½   +---organims
+ï¿½   ï¿½   +---alert
+ï¿½   ï¿½   ï¿½       Alert.tsx
+ï¿½   ï¿½   ï¿½       Alert.types.ts
+ï¿½   ï¿½   ï¿½       index.ts
+ï¿½   ï¿½   ï¿½       
+ï¿½   ï¿½   +---modal
+ï¿½   ï¿½           index.ts
+ï¿½   ï¿½           Modal.helper.ts
+ï¿½   ï¿½           Modal.tsx
+ï¿½   ï¿½           Modal.types.ts
+ï¿½   ï¿½           
+ï¿½   +---pending
+ï¿½   +---tokens
+ï¿½           color-helpers.ts
+ï¿½           color-tokens.ts
+ï¿½           color-utils.ts
+ï¿½           index.ts
+ï¿½           
 +---widgets

@@ -2,22 +2,28 @@
 
 "use client";
 
-import type { ReactNode } from "react";
-import { useSession } from "@/hooks/auth";
-import { Spinner } from "@/ui/atoms";
+import { useLogout, useSession } from "@/hooks/auth";
+import { Button, Link, Spinner } from "@/ui/atoms";
+import { PUBLIC_ROUTE } from "@/core/constants";
 
-interface ProtectedLayoutProps {
-  children: ReactNode;
-}
+export default function ProtectedLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { session, isAuthenticated, hydrate, isHydrating, isLoggingOut } =
+    useSession();
 
-export default function ProtectedLayout({ children }: ProtectedLayoutProps) {
-  const { session, isAuthenticated, hydrate, isHydrating } = useSession();
+  const { logout } = useLogout();
 
-  // Loading de sesión (puedes afinar el diseño según tu UI)
-  if (isHydrating) {
+  // Cargando sesión o cerrando sesión
+  if (isHydrating || isLoggingOut) {
     return (
-      <div className="min-h-screen flex place-content-center">
-        <Spinner size="5xl" label="Cargando sesión..." />
+      <div className="h-svh grid place-content-center">
+        <Spinner
+          size="5xl"
+          label={isLoggingOut ? "Cerrando sesión..." : "Cargando sesión..."}
+        />
       </div>
     );
   }
@@ -30,22 +36,22 @@ export default function ProtectedLayout({ children }: ProtectedLayoutProps) {
         : "No hay una sesión válida.";
 
     return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="space-y-3 text-center">
-          <p>{message}</p>
-          <button
-            type="button"
-            onClick={() => hydrate()}
-            className="mr-3 text-sm font-medium text-blue-600 underline"
-          >
-            Reintentar
-          </button>
-          <a
-            href="/auth/login"
-            className="text-sm font-medium text-blue-600 underline"
-          >
-            Ir al inicio de sesión
-          </a>
+      <div className="h-svh grid place-content-center px-4 md:px-16 lg:px-32 ">
+        <div className="flex flex-col gap-6 items-center">
+          <p className="text-3xl font-semibold text-center">{message}</p>
+          <div className="flex gap-4 items-center">
+            <Button size="lg" loading={isHydrating} onClick={hydrate}>
+              Reintentar
+            </Button>
+            <Link
+              onClick={logout}
+              size="lg"
+              href={PUBLIC_ROUTE.LOGIN}
+              colorScheme="neutral"
+            >
+              Ir al inicio de sesión
+            </Link>
+          </div>
         </div>
       </div>
     );

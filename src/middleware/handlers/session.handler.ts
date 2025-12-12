@@ -18,7 +18,6 @@ import { SESSION_ERRORS } from "@/core/constants/error-codes";
  */
 export function handlePublicSession(
   req: NextRequest,
-  pathname: string,
   status: TokenStatus
 ): URL | null {
   if (status === "VALID_TOKEN") {

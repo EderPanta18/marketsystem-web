@@ -23,7 +23,22 @@ export type IconName =
   | "loader"
   | "info"
   | "chevron-left"
-  | "chevron-right";
+  | "chevron-right"
+  | "chevron-up"
+  | "chevron-down"
+  | "send"
+  | "bell"
+  | "layout-dashboard"
+  | "building-2"
+  | "grid-2x2"
+  | "store"
+  | "bar-chart-2"
+  | "receipt"
+  | "users"
+  | "settings"
+  | "log-out"
+  | "menu"
+  | "clean";
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;

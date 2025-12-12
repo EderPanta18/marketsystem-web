@@ -30,29 +30,30 @@ export const COLOR_TOKENS: Record<UIColorScheme, UIColorTokens> = {
   },
   secondary: {
     solid: {
-      bg: "bg-gray-100",
-      bgHover: "hover:bg-gray-200",
-      bgActive: "active:bg-gray-300",
-      text: "text-gray-800",
-      border: "border-gray-300",
+      bg: "bg-sky-200", // celeste pastel suave
+      bgHover: "hover:bg-sky-300", // un poco más oscuro
+      bgActive: "active:bg-sky-400",
+      text: "text-sky-900", // celeste muy oscuro (no azul)
+      border: "border-sky-400",
     },
     outline: {
-      text: "text-gray-800",
-      border: "border-gray-400",
-      bgHover: "hover:bg-gray-50",
-      bgActive: "active:bg-gray-100",
+      text: "text-sky-900",
+      border: "border-sky-500",
+      bgHover: "hover:bg-sky-200",
+      bgActive: "active:bg-sky-300",
     },
     ghost: {
-      text: "text-gray-800",
-      bgHover: "hover:bg-gray-50",
-      bgActive: "active:bg-gray-100",
+      text: "text-sky-900",
+      bgHover: "hover:bg-sky-100",
+      bgActive: "active:bg-sky-200",
     },
     subtle: {
-      bg: "bg-gray-50",
-      text: "text-gray-800",
-      border: "border-gray-200",
+      bg: "bg-sky-100",
+      text: "text-sky-900",
+      border: "border-sky-200",
     },
   },
+
   danger: {
     solid: {
       bg: "bg-red-600",

@@ -1,8 +1,9 @@
 // hooks/auth/useSession.ts
+"use client";
 
 import { useEffect, useState, useCallback } from "react";
 import type { Session } from "@/core/types";
-import { SessionService } from "@/services/auth";
+import { AuthService, SessionService } from "@/services/auth";
 import { useAuthStore } from "@/stores";
 
 export function useSession() {
@@ -13,13 +14,29 @@ export function useSession() {
     setLoading();
 
     const s = await SessionService.getCurrentSession();
+    console.log("Hydrated session:", s);
     setSession(s);
 
-    if (s.kind === "authenticated") {
-      setUser(s.user); // status pasa a 'authenticated'
-    } else {
-      setUser(null); // status pasa a 'unauthenticated'
+    if (s.kind !== "authenticated") {
+      setUser(null); // status → unauthenticated
+      return;
     }
+
+    // sesión válida, intentamos refrescar
+    const r = await AuthService.refresh();
+
+    if (!r.ok) {
+      setUser(null);
+      setSession({
+        kind: "unauthenticated",
+        errorCode: r.error?.code ?? "REFRESH_FAILED",
+        errorMessage: r.error?.message ?? "No se pudo refrescar la sesión.",
+      } as Session);
+      return;
+    }
+
+    // refresh OK → mantenemos usuario
+    setUser(s.user);
   }, [setUser, setLoading]);
 
   useEffect(() => {
@@ -27,11 +44,12 @@ export function useSession() {
   }, [hydrate]);
 
   return {
-    session, // Session discriminada (para errorCode/errorMessage si hace falta)
-    user, // UserSession desde el store
-    status, // SessionStatus desde el store
+    session,
+    user,
+    status,
     isHydrating: status === "loading" || status === "idle",
     isAuthenticated: status === "authenticated",
+    isLoggingOut: status === "loggingOut",
     hydrate,
   };
 }

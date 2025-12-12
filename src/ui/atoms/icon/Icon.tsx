@@ -1,6 +1,5 @@
 // ui/atoms/icon/Icon.tsx
 
-import React from "react";
 import { cn } from "@/shared/utils";
 import { ICONS_MAP } from "./icons-map";
 import type {

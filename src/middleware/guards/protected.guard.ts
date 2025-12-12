@@ -3,6 +3,7 @@
 import type { NextRequest } from "next/server";
 import { ROUTE } from "@/core/config";
 import { ROLE } from "@/core/constants";
+import { normalizePath } from "@/core/utils";
 import type { MiddlewareDecision } from "../types";
 import { getTokenStatus } from "../utils/token.utils";
 import {
@@ -16,7 +17,9 @@ import {
  * usando la config central de ROUTE.
  */
 function canAccessRoute(pathname: string, userRole?: ROLE): boolean {
-  const route = ROUTE.find((r) => r.path === pathname);
+  const normalized = normalizePath(pathname);
+
+  const route = ROUTE.find((r) => r.path === normalized);
 
   if (!route) return true;
   if (route.public) return true;

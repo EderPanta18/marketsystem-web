@@ -11,12 +11,11 @@ import { handlePublicSession } from "../handlers/session.handler";
  * - Decide si pasa o redirige usando handlePublicSession.
  */
 export async function guardPublicRoute(
-  req: NextRequest,
-  pathname: string
+  req: NextRequest
 ): Promise<MiddlewareDecision> {
   const { status } = await getTokenStatus(req);
 
-  const url = handlePublicSession(req, pathname, status);
+  const url = handlePublicSession(req, status);
   if (url) {
     return { kind: "redirect", url };
   }

@@ -1,3 +1,5 @@
+// hooks/auth/useAuth.ts
+
 import { useAuthStore } from "@/stores";
 
 export function useAuth() {
