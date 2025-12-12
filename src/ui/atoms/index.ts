@@ -1,7 +1,7 @@
 // ui/atoms/index.ts
 
 export { Button } from "./button";
-export { Input } from "./input-temp";
+export { Input } from "./input";
 export { Icon } from "./icon";
 export { Badge } from "./badge";
 export { Switch } from "./switch";
