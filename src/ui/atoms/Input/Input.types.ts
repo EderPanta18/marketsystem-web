@@ -1,11 +1,14 @@
 // ui/atoms/input/Input.types.ts
 
 import type { InputHTMLAttributes, ReactNode } from "react";
-import type { UIColorScheme, UISize } from "@/core/types/ui.types";
+import type { UIColorScheme, UISize } from "@/core/types";
 
 export type InputSize = UISize;
 export type InputVariant = "default" | "filled" | "underline";
-export type InputColorScheme = Extract<UIColorScheme, "primary" | "secondary">;
+export type InputColorScheme = Extract<
+  UIColorScheme,
+  "primary" | "secondary" | "neutral"
+>;
 
 // Omitimos el size nativo del input
 type NativeInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size">;

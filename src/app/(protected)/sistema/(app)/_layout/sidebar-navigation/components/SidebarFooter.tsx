@@ -12,6 +12,28 @@ import { useIsActiveRoute } from "@/hooks/ui";
 import { useOutsideClick } from "@/shared/hooks";
 import { SIDEBAR_QUICK_ACTIONS, USER_MENU_ITEMS } from "../config";
 
+const QuickActionItem: React.FC<{
+  action: (typeof SIDEBAR_QUICK_ACTIONS)[number];
+}> = ({ action }) => {
+  const { isActive } = useIsActiveRoute(action.href);
+
+  return (
+    <Link
+      href={action.href}
+      active={isActive}
+      underline="none"
+      variant="subtle"
+      className={cn(
+        "flex-1 bg-gray-200 border-none py-3 flex items-center justify-center rounded-2xl",
+        isActive ? "bg-sky-200" : "hover:bg-sky-100"
+      )}
+      fullWidth
+    >
+      <Icon name={action.icon} className="size-7" />
+    </Link>
+  );
+};
+
 const QuickActions: React.FC = () => {
   const { accessiblePaths } = useAuthorizedRoutes();
   const allowed = new Set(accessiblePaths);
@@ -24,25 +46,9 @@ const QuickActions: React.FC = () => {
 
   return (
     <div className="flex items-center gap-2">
-      {actions.map((action) => {
-        const { isActive } = useIsActiveRoute(action.href);
-        return (
-          <Link
-            key={action.id}
-            href={action.href}
-            active={isActive}
-            underline="none"
-            variant="subtle"
-            className={cn(
-              "flex-1 bg-gray-200 border-none py-3 flex items-center justify-center rounded-2xl",
-              isActive ? "bg-sky-200" : "hover:bg-sky-100"
-            )}
-            fullWidth
-          >
-            <Icon name={action.icon} className="size-7" />
-          </Link>
-        );
-      })}
+      {actions.map((action) => (
+        <QuickActionItem key={action.id} action={action} />
+      ))}
     </div>
   );
 };

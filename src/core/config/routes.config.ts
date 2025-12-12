@@ -16,7 +16,7 @@ export const ROUTE: RouteConfig[] = [
   // Rutas del sistema que van en el sidebar
   {
     path: SYSTEM_ROUTE.DASHBOARD,
-    requiredRoles: [ROLE.MANAGER, ROLE.COORDINATOR],
+    requiredRoles: [ROLE.MANAGER, ROLE.COORDINATOR, ROLE.SUPERVISOR],
   },
   {
     path: SYSTEM_ROUTE.MARKETS,
@@ -24,11 +24,11 @@ export const ROUTE: RouteConfig[] = [
   },
   {
     path: SYSTEM_ROUTE.MARKET_SECTORS,
-    requiredRoles: [ROLE.SUPERVISOR, ROLE.COORDINATOR],
+    requiredRoles: [ROLE.SUPERVISOR, ROLE.COORDINATOR, ROLE.MANAGER],
   },
   {
     path: SYSTEM_ROUTE.MARKET_STALLS,
-    requiredRoles: [ROLE.COORDINATOR],
+    requiredRoles: [ROLE.COORDINATOR, ROLE.MANAGER],
   },
   {
     path: SYSTEM_ROUTE.REPORTS,
@@ -45,7 +45,7 @@ export const ROUTE: RouteConfig[] = [
 
   {
     path: SYSTEM_ROUTE.MERCHANTS,
-    requiredRoles: [ROLE.COORDINATOR],
+    requiredRoles: [ROLE.COORDINATOR, ROLE.MANAGER],
   },
 
   // Rutas protegidas que NO van en el sidebar
@@ -55,7 +55,7 @@ export const ROUTE: RouteConfig[] = [
   },
   {
     path: SYSTEM_ROUTE.NOTIFICATIONS,
-    requiredRoles: [ROLE.COORDINATOR],
+    requiredRoles: [ROLE.COORDINATOR, ROLE.MANAGER],
   },
   {
     path: SYSTEM_ROUTE.PROFILE,

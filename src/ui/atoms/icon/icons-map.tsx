@@ -28,6 +28,7 @@ import {
   Settings,
   Menu,
   LogOut,
+  BrushCleaning,
 } from "lucide-react";
 import type { IconName } from "./Icon.types";
 
@@ -59,4 +60,5 @@ export const ICONS_MAP: Record<IconName, React.ComponentType<any>> = {
   settings: Settings,
   "log-out": LogOut,
   menu: Menu,
+  clean: BrushCleaning,
 };

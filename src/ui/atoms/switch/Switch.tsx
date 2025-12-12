@@ -1,6 +1,6 @@
 // ui/atoms/switch/Switch.tsx
 
-import React from "react";
+import { useId } from "react";
 import { cn } from "@/shared/utils";
 import type {
   SwitchProps,
@@ -25,7 +25,7 @@ export const Switch: React.FC<SwitchProps> = ({
   id,
   ...props
 }) => {
-  const inputId = id ?? React.useId();
+  const inputId = id ?? useId();
 
   const handleToggle = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled) return;

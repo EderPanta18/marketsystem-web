@@ -11,7 +11,8 @@ export function useIsActiveRoute(targetPath: string) {
   const current = normalizePath(pathname);
   const target = normalizePath(targetPath);
 
-  const isActive = current === target;
+  // Activo si la ruta actual empieza con la ruta objetivo
+  const isActive = current === target || current.startsWith(`${target}/`);
 
   return { isActive };
 }
